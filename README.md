@@ -64,7 +64,7 @@
 </ul>
 
 <p align="center">
-  <img src="https://i.imgur.com/Y3n3w7z.png" width="600" alt="Ranking Sistema">
+  <img src="./public/assents/img/imagem-projeto-estudos" width="600" alt="Ranking Sistema">
 </p>
 
 <hr>
@@ -89,7 +89,7 @@
 <h2>📸 Ilustração da Plataforma</h2>
 
 <p align="center">
-  <img src="./public/assents/img/imagem-projeto-estudos.png" width="700" alt="Ilustração Plataforma"/>
+  <img src="./public/assents/img/imagem-projeto-cadastro.png" width="700" alt="Ilustração Plataforma"/>
 </p>
 
 <hr>
