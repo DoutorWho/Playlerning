@@ -1,0 +1,107 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/tipos_cursos.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/tipos_cursos.js') }}"></script>
+{% endblock %}
+
+{% block title %}{{ curso }}{% endblock %}
+{% block status %}{% endblock %}
+{% block body %}
+{% if curso == 'enem' %}
+<main>
+    <section id="enem-info">
+        <h2>Sobre o ENEM</h2>
+        <img src="{{ url_for('static', filename='public/assents/img/enem_curso.png') }}" alt="Imagem sobre o ENEM" class="image-responsive">
+        <p>O Exame Nacional do Ensino Médio (ENEM) é uma avaliação realizada anualmente no Brasil. Instituído em 1998, o exame tem como objetivo avaliar o desempenho escolar dos estudantes ao término da educação básica. Em 2009, o ENEM passou por uma reformulação significativa e começou a ser utilizado como mecanismo de acesso à educação superior.</p>
+        <button id="show-more-btn">Saiba mais</button>
+        <div id="extra-info" class="hidden">
+            <p>O ENEM é composto por quatro provas objetivas, que avaliam as seguintes áreas:</p>
+            <ul>
+                <li><strong>Linguagens, Códigos e suas Tecnologias:</strong> Inclui questões sobre Língua Portuguesa, Literatura, Língua Estrangeira (Inglês ou Espanhol), Arte e Educação Física.</li>
+                <li><strong>Ciências Humanas e suas Tecnologias:</strong> Avalia História, Geografia, Filosofia e Sociologia.</li>
+                <li><strong>Ciências da Natureza e suas Tecnologias:</strong> Compreende questões de Física, Química e Biologia.</li>
+                <li><strong>Matemática e suas Tecnologias:</strong> Foca em Matemática e suas aplicações.</li>
+            </ul>
+            <h3>Pontuação</h3>
+            <p>A pontuação do ENEM varia de 0 a 1000 pontos para cada área de conhecimento. A média é calculada com base no desempenho total em cada prova.</p>
+            <h3>Redação</h3>
+            <p>A Redação do ENEM deve seguir o formato de um texto dissertativo-argumentativo. Os candidatos devem desenvolver um texto de até 30 linhas sobre um tema proposto, seguindo as normas padrão da língua portuguesa. A nota da redação pode influenciar significativamente a nota final do exame.</p>
+        </div>
+    </section>
+
+    <section id="playlearning">
+        <h3>Galeria de Imagens</h3>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="{{ url_for('static', filename='public/assents/img/homem-estudando-curso.png') }}" alt="Estudante 1">
+                <img src="{{ url_for('static', filename='public/assents/img/homem2-estudando-curso.png') }}" alt="Estudante 2">
+                <img src="{{ url_for('static', filename='public/assents/img/mulher-estudando-curso.png') }}" alt="Estudante 3">
+            </div>
+            <button class="carousel-control prev">◀</button>
+            <button class="carousel-control next">▶</button>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Perguntas Frequentes sobre o ENEM</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">Como me inscrevo no ENEM?</h3>
+            <p class="faq-answer hidden">A inscrição no ENEM deve ser realizada através do site oficial do INEP durante o período de inscrições. É necessário ter um documento de identidade e pagar a taxa de inscrição, caso não se enquadre nas condições de isenção.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Qual é o custo da inscrição?</h3>
+            <p class="faq-answer hidden">O valor da taxa de inscrição pode variar de ano para ano, mas geralmente fica em torno de R$ 85. Para estudantes que comprovem baixa renda, é possível solicitar a isenção da taxa.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Quando e onde o ENEM é realizado?</h3>
+            <p class="faq-answer hidden">O ENEM é realizado em dois dias consecutivos, geralmente no mês de novembro. As provas são aplicadas em locais de prova distribuídos por todo o país.</p>
+        </div>
+    </section>
+</main>
+{% else %}
+<main>
+    <section id="info-info">
+        <h2>Sobre os Cursos de Informática</h2>
+        <img src="{{ url_for('static', filename='public/assents/img/curso-informatica.png') }}" alt="Imagem sobre Informática" class="image-responsive">
+        <p>Nossos cursos de informática são voltados para iniciantes, oferecendo uma introdução completa e acessível para quem deseja explorar o vasto universo da tecnologia. Mesmo sendo de nível básico, eles fornecem os fundamentos essenciais para que você comece sua jornada com confiança e se aventure nas diversas áreas da informática.</p>
+        <button id="show-more-btn">Saiba mais</button>
+        <div id="extra-info" class="hidden">
+            <p>Nosso curso cobre a seguinte área:</p>
+            <ul>
+                <li><strong>Lógica de Programação (Portugol):</strong> Neste curso, você será introduzido às bases da lógica de programação usando Portugol, uma linguagem didática voltada para iniciantes. O objetivo é desenvolver suas habilidades de raciocínio lógico para resolver problemas de maneira estruturada. Você aprenderá a criar algoritmos e entenderá o funcionamento por trás de qualquer linguagem de programação, o que facilitará o aprendizado futuro de linguagens mais complexas. Com foco em estruturas como sequências, condicionais e loops, este módulo prepara você para desenvolver soluções eficientes e organizadas, essenciais para o desenvolvimento de software.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="playlearning">
+        <h3>Galeria de Imagens</h3>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="{{ url_for('static', filename='public/assents/img/banco-de-dados-cursos.png') }}" alt="Programação em C">
+                <img src="{{ url_for('static', filename='public/assents/img/informatica-cursos-tipo.png') }}" alt="Lógica de Programação">
+                <img src="{{ url_for('static', filename='public/assents/img/linguagem-c-cursos.png') }}" alt="Banco de Dados">
+            </div>
+            <button class="carousel-control prev">◀</button>
+            <button class="carousel-control next">▶</button>
+        </div>
+    </section>
+
+    <section id="faq">
+        <h2>Perguntas Frequentes sobre Cursos de Informática</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">Como posso me inscrever em um curso de Informática?</h3>
+            <p class="faq-answer hidden">Basta criar uma conta em nosso site <a href="/cadastrar">apertando aqui</a>, para ter acesso ao nossos cursos.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Qual é o custo dos cursos de Informática?</h3>
+            <p class="faq-answer hidden">Os cursos são gratuitos! Não há custo adicional para nada.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">Os cursos são presenciais ou online?</h3>
+            <p class="faq-answer hidden">Os cursos são completamente online.</p>
+        </div>
+    </section>
+</main>
+{% endif %}
+{% endblock %}

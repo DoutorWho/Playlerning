@@ -1,0 +1,64 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/pagina_inicial.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/pagina_inicial.js') }}"></script>
+{% endblock %}
+
+{% block title %}Página Inicial{% endblock %}
+{% block status %}{% endblock %}
+
+
+{% block body %}
+<div class="container">
+    <div class="content">
+        <h1>Bem-vindo ao Playlerning</h1>
+        <p>Somos um site de aprendizagem gratuita, com o intuito de melhorar a experiência de todos os estudantes com a educação. Possuímos jogos, vídeo aulas e atividades que irão ajudar todos os estudantes a melhorar nos estudos.</p>
+        <p>Nosso sistema de ranking vai de bronze até diamante, permitindo que você dispute XP com outros jogadores. Além disso, temos um mecanismo de ofensiva para tornar a competição ainda mais emocionante!</p>
+        <img src="{{ url_for('static', filename='public/assents/img/ranks.png') }}" alt="Ranking">
+        <p class="non-profit">Este site é sem fins lucrativos, feito para ajudar estudantes ao redor do mundo.</p>
+    </div>
+</div>
+
+<div class="perguntas">
+    <h2>Perguntas Frequentes</h2>
+    <div class="faq-item">
+        <h4 class="faq-question">Possuímos certificados?</h4>
+        <p class="faq-answer">Não, não possuímos certificados.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="faq-question">Como funciona o sistema de ranking?</h4>
+        <p class="faq-answer">O sistema de ranking permite que você ganhe XP completando desafios. Suba de nível e compare seu progresso com outros estudantes!</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="faq-question">É pago?</h4>
+        <p class="faq-answer">Não, é de totalmente grátis! Nosso objetivo é levar conhecimento ao mundo de maneira completamente remota e gratuita.</p>
+    </div>
+    <div class="faq-item">
+        <h4 class="faq-question">Como me cadastro?</h4>
+        <p class="faq-answer">Para se cadastrar, primeiro na barra superior aperte em cadastra-se e complete seu registro.</p>
+    </div>
+</div>
+
+<div class="testimonials">
+    <h2>O que os usuários dizem</h2>
+    <div class="testimonial">
+        <p>"O Playlerning mudou a forma como estudo, muito mais divertido!"</p>
+        <span>- João, estudante</span>
+    </div>
+    <div class="testimonial">
+        <p>"Nunca pensei que aprender pudesse ser tão interativo!"</p>
+        <span>- Maria, estudante</span>
+    </div>
+    <div class="testimonial">
+        <p>"A competição de rankings me motiva a estudar todos os dias."</p>
+        <span>- Pedro, estudante</span>
+    </div>
+</div>
+{% endblock %}
+
+
+
+
+
+

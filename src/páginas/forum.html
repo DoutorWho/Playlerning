@@ -1,0 +1,169 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/forum.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/forum.js') }}"></script>
+{% endblock %}
+{% block status %} {% endblock %}
+{% block title %}Fórum{% endblock %}
+
+{% block body %}
+
+
+{% if secao == 'forum' %}
+    <header class="header">
+        <h1>Fórum da Comunidade</h1>
+        <form class="search-container">
+            <input type="text" id="pesquisa" name="pesquisa" class="search-bar" placeholder="Pesquisar tópicos...">
+            <button class="search-btn">🔍</button> <!-- Botão com emoji de lupa -->
+        </form> 
+        <button  id="new-topic-btn" class="new-topic-btn" onclick="openForm()">+ Novo Tópico</button>
+    </header>
+
+    <main>
+        <section class="forum-categories">
+            <h2>Categorias</h2>
+            <div class="category-list">
+                <div class="category">
+                    <h3>Programação</h3>
+                    <p>Discussões sobre linguagens de programação, algoritmos, e boas práticas.</p>
+                </div>
+                <div class="category">
+                    <h3>Enem</h3>
+                    <p>Debates sobre as atividades relacionadas ao Enem.</p>
+                </div>
+                <div class="category">
+                    <h3>Ajuda</h3>
+                    <p>Fórum para discutir assuntos gerais, dúvidas sobre o site, etc.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-posts">
+            <h2>Tópicos Recentes</h2>
+            <ul class="post-list">
+                {% for topico in topicos %}
+                <li class="post">
+                    <a href="/forum/comentarios?topico={{ topico['idTopico'] }}" class="post-link">
+                        <h3>{{ topico['nome'] }}</h3>
+                    </a>
+                    <span>Por {{ topico['autor']}} | {{ topico['data'] }}</span>
+                    
+                    <div class="post-status">
+                        <span>
+                            {% if topico['status'] == 'Ativa' %}
+                                🟢 Sessão Ativa
+                            {% else %}
+                                🔴 Sessão Encerrada
+                            {% endif %}
+                        </span> | <span>💬 {{ topico['comentario'] }}</span>
+                    </div> 
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Modal de Novo Tópico -->
+        <div class="modal" id="new-topic-modal">
+            <div class="modal-content">
+                <span id="close-btn" class="close-btn" onclick="closeForm()">&times;</span>
+                <h2>Criar Novo Tópico</h2>
+                <form action="/forum-submit/adicionartopico" method="post" id="new-topic-form"> 
+                    <label for="topic-title">Título do Tópico:</label>
+                    <input type="text" name="nome" id="topic-title" placeholder="Digite o título do seu tópico" required>
+                    
+                    <label for="category">Categoria:</label>
+                    <select name="categoria" id="category" required>
+                        <option value="enem">Enem</option>
+                        <option value="informatica">Informática</option>
+                        <option value="ajuda">Ajuda</option>
+                    </select>
+                    
+                    <label for="description">Descrição:</label>
+                    <textarea name="descricao" id="description" rows="4" placeholder="Digite a descrição do tópico" required></textarea>
+
+                    <button type="submit">Criar Tópico</button>
+                </form>
+            </div>
+        </div>
+</main>
+{% elif secao == 'comentario' %}
+    <div class="forum-topic">
+        <div class="topic-header">
+            <div class="user-info">
+                <img src="{{ url_for('static', filename='uploads/user-pictures/' + topico['foto_perfil']) }}" alt="Foto do Usuário" class="user-photo">
+                <div class="user-details">
+                    <span class="user-nickname">{{ topico['nickname'] }}</span>
+                    <br>
+                    <span class="user-role" id="user-role_topico" style="font-size: 20px;">{{ topico['cargo'] }}</span>
+                </div>
+            </div>
+            <div class="topic-details">
+                <h2 class="topic-title">{{ topico['nome'] }}</h2>
+                <br>
+                <p class="topic-description">{{ topico['descrição'] }}</p>
+                <span class="topic-category">Categoria: {{ topico['categoria'] }}</span>
+                <span class="topic-date">Data: {{ topico['data'] }}</span>
+                {% if nickname_usuario == topico['nickname'] %}
+                    <form action="/forum-submit/excluirtopico" method="post">
+                        <input type="hidden" name="topico_id" value="{{ topico['idTopico'] }}">
+                        <button class="btn-close-topic">Excluir Tópico</button>
+                    </form>
+                {% else %} <!--Aqui eu tenho que configurar somente para quem tem acesso ao cargo conseguir acessar-->
+                    <form action="/forum-submit/encerartopico" method="post">
+                        <input type="hidden" name="topico_id"  value="{{ topico['idTopico'] }}">
+                        <button class="btn-close-topic">Encerrar Tópico</button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <h3>Comentários:</h3>
+            {% if comentarios != 'None' %}
+                {% for numero, comentario in enumerate(comentarios) %}
+                    <div class="comment">
+                        <div class="user-info">
+                            <img src="{{ url_for('static', filename='uploads/user-pictures/' + comentario['foto_perfil']) }}" alt="Foto do Usuário" class="user-photo">
+                            <div class="user-details">
+                                <span class="user-nickname">{{ comentario['nickname'] }}</span>
+                                <br>
+                                <span class="user-role" id="user-role_coment{{numero}}" style="font-size: 20px;">{{ comentario['cargo'] }}</span>
+                            </div>
+                        </div>
+                        <div class="comment-details">
+                            <p class="comment-text">{{ comentario['descrição'] }}</p>
+                            <span class="comment-date">Data: 22/09/2024</span>
+                            <br>
+                            {% if nickname_usuario == comentario['nickname'] %}
+                                <form action="/forum-submit/apagarcomentario" method="post">
+                                    <input type="hidden" name="comentario_id" value="{{ comentario['idComentario'] }}">
+                                    <input type="hidden" name="topico_id" value="{{ topico['idTopico'] }}">
+                                    <button class="btn-delete-comment">Apagar Comentário</button>
+                                </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                    <h4>Não há comentários para esse post</h4>
+            {% endif %}
+        <!-- Repita a estrutura de .comment para mais comentários -->
+        {% if topico['status'] == 'Ativa'  %}
+            <form action="/forum-submit/adicionarcomentario" method="post" class="add-comment">
+                <input type="hidden" name="topico_id" value="{{ topico['idTopico'] }}">
+                <textarea placeholder="Adicione um comentário..." name="comentario"></textarea>
+                <button class="btn-add">Enviar Comentário</button>
+            </form>
+        {% else %}
+        <hr>
+        <div class="tópico-encerrado">
+            <h4>Tópico Encerrado!</h4>
+            <p>Não é possível enviar mais comentários, esse tópico foi encerrado!</p>
+            <p>Se tiver dúvidas, entre em contato com o suporte.</p>
+        </div>
+        {% endif %}
+    </div>
+{% endif %}
+{% endblock %}

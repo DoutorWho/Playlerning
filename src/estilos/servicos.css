@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.container p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.service-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+    transform: scale(1.05);
+}
+
+.service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #4CAF50;
+    margin-top: 15px;
+    font-size: 1.8em;
+}
+
+p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Modo escuro */
+
+body.dark-mode {
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto em um tom claro */
+}
+
+.dark-mode .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.dark-mode h1 {
+    text-align: center;
+    color: #e0e0e0; /* Cor do título em modo escuro */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.dark-mode .container p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.dark-mode .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.dark-mode .service-box {
+    background-color: #1e1e1e; /* Fundo da caixa de serviço em modo escuro */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Sombra mais clara */
+    width: 100%;
+    max-width: 350px;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.dark-mode .service-box:hover {
+    transform: scale(1.05);
+}
+
+.dark-mode .service-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.dark-mode h2 {
+    color: #81c784; /* Cor do subtítulo em modo escuro */
+    margin-top: 15px;
+    font-size: 1.8em;
+}
+
+.dark-mode p {
+    font-size: 1em;
+    color: #aaaaaa; /* Cor do texto em modo escuro */
+}

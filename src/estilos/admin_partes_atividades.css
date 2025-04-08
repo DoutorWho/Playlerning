@@ -1,0 +1,190 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9eff5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.sections, .unit-selection {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.section-btn, .unit-btn {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-btn:hover, .unit-btn:hover {
+    background: linear-gradient(145deg, #0056b3, #003d80);
+    transform: translateY(-3px);
+}
+
+.activity-info {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #0056b3;
+}
+
+#activity-container {
+    margin-top: 20px;
+}
+
+.activity {
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background: #f9fbfd;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.activity:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.question {
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.answers {
+    margin-top: 15px;
+    display: grid;
+    gap: 10px;
+}
+
+.answer {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.answer:hover {
+    background-color: #f0f4f8;
+}
+
+.correct {
+    background-color: #d4edda; /* Verde claro para a resposta correta */
+    border-color: #c3e6cb; /* Verde escuro para a borda */
+}
+
+.hidden {
+    display: none;
+}
+
+#no-activities-message {
+    color: red;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .section-btn, .unit-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .question {
+        font-size: 1.2em;
+    }
+
+    .answers {
+        gap: 8px;
+    }
+
+    .answer {
+        font-size: 1em;
+    }
+}
+
+.activity-info {
+    background-color: #e8f0fe; /* Fundo levemente azul */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.activity-info p {
+    margin: 8px 0;
+}
+
+#selected-section, #unit-number, #activity-count {
+    font-weight: bold;
+    color: #007bff; /* Azul destaque */
+    font-size: 1.2em;
+}
+
+.activity-info span {
+    display: block;
+    margin-top: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+.activity-info:hover span {
+    color: #0056b3; /* Tom mais escuro ao passar o mouse */
+}
+
+#activity-count {
+    font-size: 1.3em;
+    color: #28a745; /* Verde para o número de atividades */
+}
+
+.activity-info::before {
+    content: "📋"; /* Ícone na frente */
+    font-size: 1.5em;
+    color: #007bff;
+    display: block;
+    margin-bottom: 10px;
+}

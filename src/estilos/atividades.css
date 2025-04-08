@@ -1,0 +1,470 @@
+/* Estilo Geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Barra Lateral */
+.custom-sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Estilo do Conteúdo Principal */
+.main-content {
+    margin-top: 80px;
+    margin-left: 300px; /* Ajusta o espaço à esquerda do conteúdo principal para não sobrepor a barra lateral */
+    padding: 20px;
+    width: calc(100% - 250px); /* Garante que o conteúdo principal não ultrapasse a largura */
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: calc(100% - 250px); /* O header ocupará o restante da tela, exceto a largura da barra lateral */
+    position: fixed; /* Faz o header ficar fixo no topo */
+    top: 0;
+    left: 290px; /* O header começará logo após a barra lateral */
+    box-sizing: border-box; /* Garante que o padding seja considerado na largura total */
+    z-index: 1000; /* Garante que o header fique acima do conteúdo principal */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Container para as Unidades */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 100px; /* Adiciona um espaço para não ficar atrás do header fixo */
+}
+
+/* Estilo das Unidades */
+.unidade {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.unidade:hover {
+    transform: scale(1.05);
+}
+
+.titulo-unidade {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.titulo-unidade h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.livro {
+    font-size: 45px; /* Aumenta o tamanho do emoji */
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.livro:hover {
+    transform: scale(1.2);
+    color: #4CAF50; /* Mudança de cor no hover */
+}
+
+
+
+/* Estilo dos Exercícios */
+.exercicios {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.exercicio {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.verde {
+    background-color: #4CAF50;
+}
+
+.cinza {
+    background-color: #dcdcdc;
+}
+
+.exercicio::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.exercicio:hover::after {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.exercicio:hover {
+    transform: scale(1.2);
+}
+
+a {
+    text-decoration: none;
+}
+
+button.exercicio {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+}
+
+/* Continua aplicando os estilos dos exercícios ao botão */
+button.exercicio.verde {
+    background-color: #4CAF50;
+}
+
+button.exercicio.cinza {
+    background-color: #dcdcdc;
+}
+
+/* Mantém as interações de hover */
+button.exercicio:hover {
+    transform: scale(1.2);
+}
+
+button.exercicio::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+button.exercicio:hover::after {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* Parte */
+
+/* Estilo para a aba */
+.nova-aba {
+    display: none; /* Inicialmente escondido */
+    position: fixed; /* Fixa a aba na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 55%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Move para o centro exato */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    background-color: white; /* Fundo branco */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* Largura da aba */
+    max-width: 90%; /* Não ultrapassa a tela em dispositivos menores */
+    transition: none; /* Desativa transições para evitar movimento */
+}
+
+/* Estilo para o fundo da aba */
+.modal-overlay {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+    z-index: 999; /* Fica atrás da aba */
+}
+
+/* Estilo para o botão de fechar */
+#fechar {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+
+/* Modo escuro */
+
+
+/* Estilo Geral */
+body.dark-mode {
+    font-family: 'Arial', sans-serif;
+    background-color: #181818; /* Fundo escuro */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+/* Barra Lateral */
+.dark-mode .custom-sidebar {
+    width: 250px;
+    background-color: #252525; /* Fundo da barra lateral */
+    color: #e0e0e0; /* Cor do texto */
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Estilo do Conteúdo Principal */
+.dark-mode .main-content {
+    margin-top: 80px;
+    margin-left: 300px; /* Ajusta o espaço à esquerda do conteúdo principal para não sobrepor a barra lateral */
+    padding: 20px;
+    width: calc(100% - 250px); /* Garante que o conteúdo principal não ultrapasse a largura */
+    background-color: #202020; /* Fundo do conteúdo principal */
+    color: #e0e0e0; /* Cor do texto no conteúdo principal */
+}
+
+/* Header */
+.dark-mode header {
+    background-color: #4CAF50; /* Mantém a cor verde */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: calc(100% - 250px); /* O header ocupará o restante da tela */
+    position: fixed; /* Faz o header ficar fixo no topo */
+    top: 0;
+    left: 290px; /* O header começará logo após a barra lateral */
+    box-sizing: border-box; /* Garante que o padding seja considerado na largura total */
+    z-index: 1000; /* Garante que o header fique acima do conteúdo principal */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Container para as Unidades */
+.dark-mode .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 100px; /* Adiciona um espaço para não ficar atrás do header fixo */
+}
+
+/* Estilo das Unidades */
+.dark-mode .unidade {
+    background-color: #2a2a2a; /* Fundo das unidades */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra mais profunda */
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.dark-mode .unidade:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Sombra mais intensa no hover */
+}
+
+.dark-mode .titulo-unidade {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.dark-mode .titulo-unidade h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #e0e0e0; /* Cor do título */
+}
+
+.dark-mode .livro {
+    font-size: 45px; /* Aumenta o tamanho do emoji */
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode .livro:hover {
+    transform: scale(1.2);
+    color: #4CAF50; /* Mudança de cor no hover */
+}
+
+/* Estilo dos Exercícios */
+.dark-mode .exercicios {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.dark-mode .exercicio {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .verde {
+    background-color: #4CAF50; /* Verde */
+}
+
+.dark-mode .cinza {
+    background-color: #4d4d4d; /* Cinza escuro */
+}
+
+.dark-mode .exercicio::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #e0e0e0; /* Cor do texto das dicas */
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dark-mode .exercicio:hover::after {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.dark-mode .exercicio:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo dos Links e Botões */
+
+.dark-mode button.exercicio {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+}
+
+/* Continua aplicando os estilos dos exercícios ao botão */
+.dark-mode button.exercicio.verde {
+    background-color: #4CAF50; /* Verde */
+}
+
+.dark-mode button.exercicio.cinza {
+    background-color: #4d4d4d; /* Cinza escuro */
+}
+
+/* Mantém as interações de hover */
+.dark-mode button.exercicio:hover {
+    transform: scale(1.2);
+}
+
+.dark-mode button.exercicio::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: #e0e0e0; /* Cor do texto das dicas */
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dark-mode button.exercicio:hover::after {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Estilo para a aba */
+.dark-mode .nova-aba {
+    display: none; /* Inicialmente escondido */
+    position: fixed; /* Fixa a aba na tela */
+    top: 50%; /* Centraliza verticalmente */
+    left: 55%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Move para o centro exato */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    background-color: beige; /* Fundo da aba */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra da aba */
+    width: 400px; /* Largura da aba */
+    max-width: 90%; /* Não ultrapassa a tela em dispositivos menores */
+    transition: none; /* Desativa transições para evitar movimento */
+}
+
+/* Estilo para o fundo da aba */
+.dark-mode .modal-overlay {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+    z-index: 999; /* Fica atrás da aba */
+}
+
+/* Estilo para o botão de fechar */
+.dark-mode #fechar {
+    margin-top: 10px;
+    cursor: pointer;
+    color: #4CAF50; /* Cor do botão de fechar */
+}

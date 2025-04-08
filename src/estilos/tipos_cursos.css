@@ -1,0 +1,256 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #333;
+}
+
+.image-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+#enem-info {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+#playlearning {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
+
+.hidden {
+    display: none;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+    color: #00796b;
+}
+
+.faq-answer {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #e0f7fa;
+    border-radius: 5px;
+}
+
+.gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.gallery-item {
+    width: 30%;
+    border-radius: 5px;
+}
+
+
+/* ... outros estilos ... */
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+    color: #00796b;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.faq-answer {
+    display: none; /* Inicialmente escondido */
+}
+
+.faq-answer.hidden {
+    display: none;
+}
+
+
+/* Carrosel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+
+/* Estilos adicionais para a interatividade da FAQ */
+.hidden {
+    display: none;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    cursor: pointer;
+    color: #00796b;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.faq-answer {
+    display: none; /* Inicialmente escondido */
+    margin: 5px 0;
+    padding: 10px;
+    background-color: #f1f8e9; /* Cor de fundo alterada para um verde mais claro */
+    color: #004d40; /* Cor do texto alterada para um verde escuro */
+    border-radius: 5px;
+}
+
+.faq-answer.hidden {
+    display: none;
+}
+
+/* Modo escuro */
+
+.dark-mode body {
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto em cinza claro */
+}
+
+.dark-mode h2 {
+    color: #009688; /* Títulos em branco */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Sombra para melhor legibilidade */
+}
+
+.dark-mode #enem-info {
+    background-color: #1e1e1e; /* Fundo do elemento em modo escuro */
+    color: #f0f0f0; /* Texto em cinza claro */
+    border: 1px solid #444; /* Borda sutil para delimitar o elemento */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Padding para o conteúdo */
+}
+
+.dark-mode #playlearning {
+    background-color: #1e1e1e; /* Fundo do elemento em modo escuro */
+    color: #f0f0f0; /* Texto em cinza claro */
+    border: 1px solid #444; /* Borda sutil para delimitar o elemento */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 15px; /* Padding para o conteúdo */
+}
+
+.dark-mode button {
+    background-color: #009688; /* Cor do botão em modo escuro */
+    color: #ffffff; /* Texto do botão em branco */
+    border: none; /* Remove bordas do botão */
+    padding: 12px 20px; /* Adiciona padding ao botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.3s; /* Transição suave para cor e transformação */
+}
+
+.dark-mode button:hover {
+    background-color: #00796b; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+}
+
+.dark-mode .faq-answer {
+    background-color: #2a2a2a; /* Fundo da resposta da FAQ */
+    color: #e0e0e0; /* Texto da resposta em cinza claro */
+    padding: 15px; /* Adiciona padding à resposta */
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid #444; /* Borda para delimitar a resposta */
+    margin-top: 10px; /* Espaço acima da resposta */
+}
+
+.dark-mode .faq-question {
+    background-color: #00796b; /* Fundo da pergunta da FAQ */
+    color: #ffffff; /* Texto da pergunta em branco */
+    padding: 15px; /* Adiciona padding à pergunta */
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid #444; /* Borda para delimitar a pergunta */
+    margin-bottom: 10px; /* Espaço abaixo da pergunta */
+}
+
+.dark-mode .carousel-control {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo dos controles do carrossel */
+    color: #ffffff; /* Texto dos controles em branco */
+    border-radius: 50%; /* Bordas arredondadas */
+    padding: 10px; /* Padding para os controles */
+}
+
+.dark-mode .gallery-item {
+    background-color: #1e1e1e; /* Fundo dos itens da galeria */
+    color: #f0f0f0; /* Texto em cinza claro */
+    padding: 15px; /* Adiciona padding aos itens da galeria */
+    border-radius: 8px; /* Bordas arredondadas */
+    border: 1px solid #444; /* Borda para delimitar o item */
+    margin-bottom: 15px; /* Espaço abaixo dos itens da galeria */
+}
+
+

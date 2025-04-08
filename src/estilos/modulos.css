@@ -1,0 +1,172 @@
+/* Evitando interferência nas tags nav e footer */
+body:not(nav):not(footer) {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f4f5;
+    flex-direction: row;
+}
+
+/* Content Styles */
+.custom-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #e9d8a6;
+    height: 100%;
+    margin-left: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Title Section */
+.module-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.module-title h1 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+.module-title p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Blocks Container */
+.blocks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: calc(100% - 250px); /* Ajusta a largura para não ultrapassar a largura restante */
+    max-width: 1000px; /* Limita a largura máxima para melhor apresentação */
+    box-sizing: border-box;
+}
+
+/* Block Styles */
+.custom-block {
+    background-color: #f4a261;
+    width: 230px; /* Ajustado para caber dois blocos por linha */
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-block img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.custom-block h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.custom-block p {
+    font-size: 0.9em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.progress {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Custom color scheme */
+.custom-block:nth-child(1) {
+    background-color: #ee6c4d; /* Línguas */
+}
+
+.custom-block:nth-child(2) {
+    background-color: #98c1d9; /* Ciências Humanas */
+}
+
+.custom-block:nth-child(3) {
+    background-color: #ffb703; /* Ciências Exatas */
+}
+
+.custom-block:nth-child(4) {
+    background-color: #6d28d9; /* Ciências Naturais */
+}
+
+/* Modo escuro */
+
+.dark-mode .custom-content {
+    background-color: #121212; /* Cor de fundo no modo escuro */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+/* Title Section */
+.dark-mode .module-title h1 {
+    color: #bb86fc; /* Cor do título no modo escuro */
+}
+
+.dark-mode .module-title p {
+    color: #aaa; /* Cor do texto no modo escuro */
+}
+
+
+/* Block Styles */
+.dark-mode .custom-block {
+    background-color: #1e1e1e; /* Cor de fundo dos blocos no modo escuro */
+    color: #e0e0e0; /* Cor do texto dos blocos no modo escuro */
+    border: 1px solid #333; /* Borda sutil para os blocos no modo escuro */
+}
+
+.dark-mode .custom-block h3 {
+    color: blue; /* Cor do título dos blocos no modo escuro */
+}
+
+.dark-mode .custom-block p {
+    color: #ccc; /* Cor do texto dos blocos no modo escuro */
+}
+
+.dark-mode .custom-block:nth-child(1) {
+    background-color: #ee6c4d; /* Línguas (mantido o mesmo) */
+}
+
+.dark-mode .custom-block:nth-child(2) {
+    background-color: #98c1d9; /* Ciências Humanas (mantido o mesmo) */
+}
+
+.dark-mode .custom-block:nth-child(3) {
+    background-color: #ffb703; /* Ciências Exatas (mantido o mesmo) */
+}
+
+.dark-mode .custom-block:nth-child(4) {
+    background-color: #6d28d9; /* Ciências Naturais (mantido o mesmo) */
+}
+
+.dark-mode .progress {
+    color: #bb86fc; /* Cor do progresso no modo escuro */
+}
+
+/* Hover Effect */
+.dark-mode .custom-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); /* Sombra mais clara ao passar o mouse */
+}

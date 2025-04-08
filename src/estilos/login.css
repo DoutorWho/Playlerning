@@ -1,0 +1,204 @@
+/* Estilo da página de login */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.login-container h2 {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-instructions {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    text-align: center;
+    font-style: italic;
+}
+
+.input-group {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #444;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #6C63FF;
+    box-shadow: 0 0 12px rgba(108, 99, 255, 0.3);
+    background-color: #fff;
+    outline: none;
+}
+
+/* Estilos aprimorados para o botão de login */
+button.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #6C63FF, #42A5F5);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button.login-btn:hover {
+    background: linear-gradient(45deg, #574BFA, #2196F3);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+button.login-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+button.login-btn::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+}
+
+button.login-btn:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* Mensagem de erro */
+.error-message {
+    color: #ff4757;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+    display: none;
+}
+
+/* Links de recuperação de senha e cadastro */
+.login-extra {
+    margin-top: 25px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-extra a {
+    color: #6C63FF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-extra a:hover {
+    color: #42A5F5;
+}
+
+/* Efeitos de animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Estilização da mensagem de erro */
+.error-message {
+    background-color: #ffdddd; /* Fundo vermelho claro para indicar erro */
+    color: #d8000c; /* Cor do texto vermelho escuro */
+    border: 1px solid #d8000c; /* Borda em vermelho */
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 50%; /* Limita a largura para 80% da página */
+    transition: all 0.3s ease; /* Animação ao passar o mouse */
+    transform: translateY(-10px); /* Move a mensagem ligeiramente para cima no estado inicial */
+}
+
+.error-message.show {
+    display: block;
+    opacity: 1; /* Tornar visível */
+    transform: translateY(0); /* Volta à posição original */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Animação suave de entrada */
+}
+
+/* Efeito ao passar o mouse sobre a mensagem */
+.error-message:hover {
+    background-color: #ffd2d2; /* Levemente mais claro ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(216, 0, 12, 0.4); /* Sombra mais forte */
+    cursor: pointer;
+    transform: scale(1.05); /* Leve aumento de tamanho */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Animação de hover */
+}
+
+/* Opcional: Adicionando um ícone de alerta */
+.error-message:before {
+    content: "⚠ "; /* Ícone de alerta */
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px 20px;
+    }
+
+    button.login-btn {
+        padding: 12px;
+    }
+}

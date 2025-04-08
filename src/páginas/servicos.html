@@ -1,0 +1,41 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/servicos.css') }}">
+{% endblock %}
+{% block title %}Nossos Serviços | Playlerning{% endblock %}
+{% block status %}{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    <h1>Nossos Serviços</h1>
+    <p>Na Playlerning, oferecemos uma gama de serviços projetados para tornar a educação acessível e divertida para todos. Explore nossos serviços abaixo e veja como podemos ajudar a melhorar sua experiência de aprendizado.</p>
+    <div class="services">
+        <div class="service-box">
+            <img src="{{ url_for('static', filename='public/assents/img/videogame_criancas.png') }}" alt="Jogos Educativos" class="service-img">
+            <h2>Jogos Educativos</h2>
+            <p>Explore uma variedade de jogos interativos que tornam o aprendizado divertido e envolvente. Nossos jogos cobrem várias disciplinas e são projetados para todas as idades. De matemática a ciências, cada jogo é uma nova aventura de aprendizado.</p>
+            <strong style="color: red; font-size: 20px;">Será adicionado em breve!</strong>
+        </div>
+        <div class="service-box">
+            <img src="{{ url_for('static', filename='public/assents/img/criancas_usando_computador.png') }}" alt="Aulas em Vídeo" class="service-img">
+            <h2>Aulas em Vídeo</h2>
+            <p>Acesse aulas em vídeo gratuitas sobre diversos temas para apoiar seu aprendizado. As aulas são ministradas por especialistas e estão disponíveis para você assistir a qualquer momento. Aprenda no seu próprio ritmo e recorra às aulas sempre que precisar.</p>
+            <strong style="color: red; font-size: 20px;">Será adicionado em breve!</strong>
+        </div>
+        <div class="service-box">
+            <img src="{{ url_for('static', filename='public/assents/img/crianca_estudando.png') }}" alt="Atividades e Exercícios" class="service-img">
+            <h2>Atividades e Exercícios</h2>
+            <p>Participe de atividades e exercícios projetados para reforçar conceitos e habilidades. Nossos exercícios são criados para avaliar seu progresso e ajudar na prática contínua. São atividades interativas que tornam o estudo mais eficiente e prazeroso.</p>
+        </div>
+        <div class="service-box">
+            <img src="{{ url_for('static', filename='public/assents/img/sistema_rank.png') }}" alt="Atividades e Exercícios" class="service-img">
+            <h2>Sistema de rank</h2>
+            <p>Ganhe XP e aumente seu rank ao longo do tempo, realizando atividades, assistindo aulas e jogando em nosso site. Os ranks, em ordem crescente, são: Bronze, Prata, Ouro, Platina, Obsidiana e Diamante. Compita com diversos jogadores e, se conseguir ficar entre os 10 primeiros, suba de rank! Tenha uma conta recheada de XP e conquistas.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

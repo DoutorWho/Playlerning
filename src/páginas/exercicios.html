@@ -1,0 +1,50 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/exercicios.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/exercicios.js') }}" defer></script>
+{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block status %}{% endblock %}
+<!-- Ou simplismente colocar o número da atividade ou a matéria -->
+{% block title %}Perguntas{% endblock %} 
+{% block body %}
+<div id="container">
+    <div id="question-area">
+        <div class="question-content"> 
+            <img src="{{ url_for('static', filename='public/assents/img/interogacao.png') }}" alt="Imagem relacionada" class="question-image">
+            <h2 id="pergunta">Aqui vai a pergunta</h2>
+        </div>
+        <div class="alternativas">
+            <label>
+                <input type="radio" name="resposta" value="1">
+                <span id="alternativa1">Alternativa 1</span>
+            </label><br>
+            <label>
+                <input type="radio" name="resposta" value="2">
+                <span id="alternativa2">Alternativa 2</span>
+            </label><br>
+            <label>
+                <input type="radio" name="resposta" value="3">
+                <span id="alternativa3">Alternativa 3</span>
+            </label><br>
+            <label>
+                <input type="radio" name="resposta" value="4">
+                <span id="alternativa4">Alternativa 4</span>
+            </label>
+        </div>
+        <button id="confirmar">Confirmar</button>
+        <form id="resultado-form" action="/envioatividades-submit" method="POST">
+            <input type="hidden" name="curso" value="{{ curso }}">
+            <input type="hidden" name="disciplina" value="{{ disciplina }}">
+            <input type="hidden" name="atividade_numero" value="{{ atividade_numero }}">
+            <input type="hidden" name="unidade" value="{{ unidade }}">
+            <input type="hidden" name="respostas" id="respostas">
+        </form>
+        <div id="resultado"></div>
+        <button id="voltar-inicio" style="display: none;">Voltar ao Início</button>
+    </div>
+</div>
+
+{% endblock %}

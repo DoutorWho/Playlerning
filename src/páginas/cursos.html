@@ -1,0 +1,46 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/cursos.css') }}">
+{% endblock %}
+{% block title %}Cursos{% endblock %}
+{% block status %}{% endblock %}
+{% block body %}
+<header>
+    <h1>Cursos ENEM e Informática</h1>
+</header>
+
+<div class="container">
+    <div class="left-section">
+        <img src="{{ url_for('static', filename='public/assents/img/homem_estudando.png') }}" alt="Homem estudando">
+        <p>Os nossos cursos são projetados para fornecer uma base sólida em disciplinas essenciais para o ENEM e na área de Informática. Cada curso é cuidadosamente estruturado para oferecer uma experiência de aprendizado eficaz e acessível.</p>
+        <p>Os cursos ENEM cobrem as principais disciplinas exigidas no exame, enquanto os cursos de Informática exploram áreas fundamentais como programação, redes e banco de dados. Fazer esses cursos é essencial para quem deseja alcançar uma boa performance no ENEM ou aprimorar suas habilidades tecnológicas.</p>
+        <p>Através de nossos cursos, você terá a oportunidade de adquirir conhecimentos importantes e aplicáveis em diversas áreas, aumentando suas chances de sucesso acadêmico e profissional.</p>
+    </div>
+    
+    <div class="right-section">
+        <div class="subject-section">
+            <h2>ENEM</h2>
+            <img src="{{ url_for('static', filename='public/assents/img/logo_enem.png') }}" alt="ENEM">
+            <h3>Assuntos Principais</h3>
+            <ul>
+                <li><strong>Linguagens, Códigos e suas Tecnologias:</strong> Aprofunde-se na compreensão de textos, gramática e literatura.</li>
+                <li><strong>Matemática e suas Tecnologias:</strong> Resolva problemas matemáticos e desenvolva o raciocínio lógico.</li>
+                <li><strong>Ciências Humanas:</strong> Estude História, Geografia, Filosofia e Sociologia para entender o mundo ao seu redor.</li>
+                <li><strong>Ciências da Natureza:</strong> Explore Biologia, Física e Química e compreenda os fenômenos naturais.</li>
+            </ul>
+            <a href="/cursos/enem" class="cta-button">Explore os Cursos ENEM</a>
+        </div>
+
+        <div class="subject-section">
+            <h2>Informática</h2>
+            <img src="{{ url_for('static', filename='public/assents/img/logo_informatica.png') }}" alt="Informática">
+            <h3>Disciplinas Oferecidas</h3>
+            <ul>
+                <li><strong>Lógica de Programação (Portugol):</strong> Aprenda a criar soluções de software.</li>
+            </ul>
+            <a href="/cursos/informatica" class="cta-button">Explore os Cursos de Informática</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

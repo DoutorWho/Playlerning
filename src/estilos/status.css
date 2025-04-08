@@ -1,0 +1,831 @@
+/* Evitando interferência nas tags nav e footer */
+body:not(nav):not(footer) {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: #f0f4f5;
+    flex-direction: row;
+}
+
+
+                                                                /* Estilo para configurações */
+.settings-section {
+    flex: 1;
+    padding: 20px;
+    margin-left: 290px;
+    background-color: #ffffff;
+    border-left: 2px solid #004d40;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Estilo do modo */
+/* Estilo para a seleção de modo */
+.mode-selection {
+    display: flex;
+    gap: 20px;
+}
+
+.mode-selection label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #004d40;
+}
+
+.mode-selection input[type="radio"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Estilo para o seletor de idioma */
+.setting-item select {
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 1em;
+    font-weight: 400;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.setting-item select:hover,
+.setting-item select:focus {
+    border-color: #0056b3;
+    background-color: #f0f4f5;
+    outline: none;
+}
+
+/* Adiciona uma sombra sutil no seletor para um efeito mais moderno */
+.setting-item select {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilo do idioma */
+.setting-item select {
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 8px 12px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    background-color: #ffffff;
+    font-size: 1em;
+    font-weight: 400;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.setting-item select:hover,
+.setting-item select:focus {
+    border-color: #0056b3;
+    background-color: #f0f4f5;
+    outline: none;
+}
+
+/* Adiciona uma sombra sutil no seletor para um efeito mais moderno */
+.setting-item select {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.settings-section h1 {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Categorias de Configuração */
+.setting-category {
+    margin-bottom: 30px;
+}
+
+.setting-category h2 {
+    color: #004d40;
+    font-size: 1.5em;
+    border-bottom: 1px solid #004d40;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Itens de Configuração */
+/* Settings Section Styles */
+.settings-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-left: 2px solid #004d40;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Título */
+.settings-section h1 {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 600;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Categorias de Configuração */
+.setting-category {
+    margin-bottom: 30px;
+}
+
+.setting-category h2 {
+    color: #004d40;
+    font-size: 1.5em;
+    border-bottom: 1px solid #004d40;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Itens de Configuração */
+.setting-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setting-item label {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #004d40;
+}
+
+.setting-item input[type="checkbox"],
+.setting-item select {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:focus {
+    outline: 2px solid #004d40;
+    outline-offset: 2px;
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#save-changes {
+    background-color: #28a745;
+    font-weight: 700;
+}
+
+#save-changes:hover {
+    background-color: #218838;
+}
+
+
+
+                                                                /* Estilo para Perfil */
+
+/* Profile Section Styles */
+.profile-section {
+    flex: 1;
+    margin-left: 290px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-left: 2px solid #004d40;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.profile-section h1 {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: 3px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Cabeçalho do Perfil */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.user-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 25px;
+    border: 4px solid #007bff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-info h2 {
+    color: #004d40;
+    font-size: 2em;
+    margin: 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.user-info p {
+    font-size: 1.3em;
+    color: #333;
+    margin: 5px 0;
+}
+
+.user-info p span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Seção de Ofensiva */
+.user-offensive {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-offensive h2 {
+    color: #004d40;
+    font-size: 1.8em;
+    border-bottom: 2px solid #004d40;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.offensive-info p {
+    font-size: 1.2em;
+    color: #333;
+    margin: 10px 0;
+}
+
+.offensive-info p span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+                                                                /* Estilo para Ranks */
+/* Rank Section Styles */
+.rank-section {
+    flex: 1;
+    padding: 30px;
+    margin-left: 290px;
+    background-color: #f8f9fa;
+    border-left: 2px solid #004d40;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Título */
+.rank-section h1 {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: 3px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Rank do Usuário */
+.user-rank {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.rank-badge {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.rank-badge img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+#user-rank-name {
+    margin: 0;
+}
+
+#user-global-position {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#user-global-position span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.top-10 {
+    margin-top: 30px;
+}
+
+.top-10 h2 {
+    color: #004d40;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Estilo dos Itens da Lista */
+.rank-list {
+    list-style: none;
+    padding: 0;
+}
+
+.rank-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.rank-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.rank-details {
+    display: flex;
+    flex-direction: column; /* Garante que os itens fiquem empilhados */
+}
+
+.rank-name {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 600;
+}
+
+.rank-xp {
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px; /* Adiciona um pequeno espaço entre o nome e o XP */
+}
+
+/* Usuário Atual */
+.your-rank {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.your-rank h2 {
+    color: #004d40;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.your-rank .rank-item {
+    display: flex;
+    align-items: center;
+}
+
+.your-rank .rank-avatar {
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border: 3px solid #007bff;
+}
+
+.your-rank .rank-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.your-rank .rank-name {
+    font-size: 1.4em;
+    color: #333;
+}
+
+.your-rank .rank-xp {
+    font-size: 1.1em;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+
+                                                                /* Estilo para Missoes */
+
+/* Missions Section Styles */
+.missions-section {
+    flex: 1;
+    padding: 30px;
+    margin-left: 290px;
+    background-color: #f8f9fa;
+    border-left: 2px solid #004d40;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Título */
+.missions-section h1 {
+    color: #004d40;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    font-weight: 700;
+    border-bottom: 3px solid #004d40;
+    padding-bottom: 10px;
+}
+
+/* Missões Ativas e Completas */
+.active-missions, .completed-missions {
+    margin-top: 20px;
+}
+
+.active-missions h2, .completed-missions h2 {
+    color: #004d40;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Lista de Missões */
+.missions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mission-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mission-item.completed {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.mission-details h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.mission-details p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.mission-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.mission-progress progress {
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+    margin-bottom: 5px;
+}
+
+.mission-progress span {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.mission-status {
+    font-size: 1.1em;
+    color: #155724;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+/* Modo escuro */
+
+body.dark-mode {
+    background-color: black;
+}
+
+
+
+                                                        /* Para as configurações */
+
+
+/* Modo escuro */
+.dark-mode .settings-section {
+    background-color: #1c1c1c;
+    border-left: 2px solid #00897b; /* Ajuste a cor do contorno */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+/* Modo escuro para o seletor de idioma */
+.dark-mode .setting-item select {
+    background-color: #2a2a2a;
+    border: 2px solid #007bff;
+    color: #e0e0e0;
+}
+
+.dark-mode .settings-section h1 {
+    color: #e0e0e0;
+    border-bottom: 2px solid #00897b; /* Ajuste a cor do contorno */
+}
+
+/* Modo escuro para as categorias de configuração */
+.dark-mode .setting-category h2 {
+    color: #e0e0e0;
+    border-bottom: 1px solid #00897b; /* Ajuste a cor do contorno */
+}
+
+/* Modo escuro para itens de configuração */
+.dark-mode .setting-item label {
+    color: #e0e0e0;
+}
+
+/* Modo escuro para botões */
+.dark-mode button {
+    background-color: #3a3a3a;
+    color: #ffffff;
+}
+
+.dark-mode button:hover {
+    background-color: #505050;
+}
+
+/* Modo escuro para salvar mudanças */
+.dark-mode #save-changes {
+    background-color: #2e7d32;
+}
+
+
+
+
+                                                                /* Estilo para o perfil */
+
+/* Modo escuro */
+.dark-mode .profile-section {
+    background-color: #1c1c1c;
+    border-left: 2px solid #00897b; /* Ajuste a cor do contorno */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra mais leve para contraste */
+}
+
+/* Modo escuro para o título */
+.dark-mode .profile-section h1 {
+    color: #e0e0e0;
+    border-bottom: 3px solid #00897b; /* Ajuste a cor do contorno */
+}
+
+/* Modo escuro para o cabeçalho do perfil */
+.dark-mode .profile-header .user-logo {
+    border: 4px solid #007bff; /* Mantém a cor original ou ajusta conforme necessário */
+}
+
+.dark-mode .user-info h2 {
+    color: #e0e0e0;
+}
+
+.dark-mode .user-info p {
+    color: #ccc; /* Cor do texto mais clara para legibilidade */
+}
+
+/* Seção de Ofensiva */
+.dark-mode .user-offensive {
+    background-color: #2a2a2a; /* Fundo escuro para a seção de ofensiva */
+    color: #e0e0e0; /* Cor do texto */
+}
+
+.dark-mode .user-offensive h2 {
+    color: #e0e0e0;
+    border-bottom: 2px solid #00897b; /* Ajuste a cor do contorno */
+}
+
+.dark-mode .offensive-info p {
+    color: #ccc; /* Cor do texto mais clara para legibilidade */
+}
+
+
+                                                                /* Estilo para o ranks */
+
+/* Modo escuro */
+.dark-mode .rank-section {
+    background-color: #1c1c1c;
+    border-left: 2px solid #00897b; /* Ajuste a cor do contorno */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra mais leve para contraste */
+}
+
+/* Modo escuro para o título */
+.dark-mode .rank-section h1 {
+    color: #e0e0e0;
+    border-bottom: 3px solid #00897b; /* Ajuste a cor do contorno */
+}
+
+/* Rank do Usuário */
+.dark-mode .user-rank {
+    background-color: #2a2a2a; /* Fundo escuro para a seção do rank do usuário */
+    color: #e0e0e0; /* Cor do texto */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra mais leve para contraste */
+}
+
+.dark-mode .rank-badge {
+    background-color: #007bff; /* Mantém a cor original ou ajusta conforme necessário */
+    color: #ffffff; /* Mantém a cor original do texto */
+}
+
+.dark-mode #user-global-position {
+    color: #ccc; /* Cor do texto mais clara para legibilidade */
+}
+
+.dark-mode #user-global-position span {
+    color: #007bff; /* Mantém a cor original ou ajusta conforme necessário */
+}
+
+.dark-mode .top-10 h2 {
+    color: #e0e0e0; /* Cor do título no modo escuro */
+}
+
+/* Estilo dos Itens da Lista */
+.dark-mode .rank-item {
+    border-bottom: 1px solid #444; /* Cor do separador mais escura */
+}
+
+.dark-mode .rank-avatar {
+    border: 2px solid #007bff; /* Mantém a cor original ou ajusta conforme necessário */
+}
+
+/* Usuário Atual */
+.dark-mode .your-rank {
+    background-color: #2a2a2a; /* Fundo escuro para a seção do usuário atual */
+    color: #e0e0e0; /* Cor do texto */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra mais leve para contraste */
+}
+
+.dark-mode .your-rank h2 {
+    color: #e0e0e0; /* Cor do título no modo escuro */
+}
+
+.dark-mode .rank-name {
+    color: #728312;
+}
+
+.dark-mode .your-rank {
+    color: #e0e0e0; /* Cor do nome no modo escuro */
+}
+
+.dark-mode .your-rank .rank-xp {
+    color: #ccc; /* Cor do XP mais clara para legibilidade */
+}
+
+
+                                                                    /* Para as missões */
+
+
+
+/* Modo escuro */
+.dark-mode .missions-section {
+    background-color: #1c1c1c; /* Fundo escuro para a seção de missões */
+    border-left: 2px solid #00897b; /* Ajuste a cor do contorno */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Sombra mais leve para contraste */
+}
+
+/* Título */
+.dark-mode .missions-section h1 {
+    color: #e0e0e0; /* Cor do título no modo escuro */
+    border-bottom: 3px solid #00897b; /* Ajuste a cor do contorno */
+}
+
+/* Missões Ativas e Completas */
+.dark-mode .active-missions h2, 
+.dark-mode .completed-missions h2 {
+    color: #e0e0e0; /* Cor do título para missões ativas e completadas */
+}
+
+/* Lista de Missões */
+.dark-mode .mission-item {
+    background-color: #2a2a2a; /* Fundo escuro para os itens de missões */
+    color: #e0e0e0; /* Cor do texto */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); /* Sombra mais leve para contraste */
+}
+
+.dark-mode .mission-item.completed {
+    background-color: #4baf4b; /* Fundo para missões completas no modo escuro */
+    border: 1px solid #c3e6cb; /* Ajuste a cor do contorno se necessário */
+}
+
+.dark-mode .mission-details h3 {
+    color: #e0e0e0; /* Cor do título da missão no modo escuro */
+}
+
+.dark-mode .mission-details p {
+    color: #ccc; /* Cor do texto da descrição da missão */
+}
+
+.dark-mode .mission-progress span {
+    color: #e0e0e0; /* Cor do texto de progresso no modo escuro */
+}
+
+.dark-mode .mission-status {
+    color: #a2d3a2; /* Cor do status da missão no modo escuro */
+}

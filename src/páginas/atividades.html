@@ -1,0 +1,55 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/atividades.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/atividades.js') }}"></script>
+{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+<!-- Ou simplismente colocar o número da atividade ou a matéria -->
+{% block title %}Atividades{% endblock %} 
+{% block body %}
+<!-- Conteúdo Principal -->
+<div class="main-content">
+    <header>
+        <h1>{{ nome_titulo }}</h1>
+        <p>Bem-vindo aos seus estudos de {{ disciplina_titulo }}</p>
+    </header>
+
+    <div class="container">
+        <!-- Unidade 1 -->
+        {% for unidade in range(1, 2) %}
+        <div class="modal-overlay" id="modal-overlay"></div>
+            <div class="unidade">
+                <div class="titulo-unidade">
+                    <h2>Unidade {{ unidade }}</h2>
+                    <span class="livro" id="livro" data-unidade="{{ unidade }}" data-secao="{{ secao }}" data-disciplina="{{ disicplina_nome }}">📚</span>   
+                </div>             
+                <div class="exercicios">
+                    {% for numero, tipo in enumerate(secoes[unidade-1], start=1) %}
+                        {% set usuario_fez = secoes[unidade-1] %} <!--Aquele ele retorna de uma lista a com True ou None-->
+                        {% set quantidade_fez = secoes[unidade-1] | select('eq', True) | list | length  %}
+
+                        {% if usuario_fez[numero-1] == True %}
+                            <div class="exercicio verde" data-title="Exercício {{ numero }}"></div>
+                        {% elif numero-1 == quantidade_fez %} <!--Aqui é se for igual, então, estamos na mesma parte que ele precisa fazer, e os outros estão bloqueados. Pois se fe ele fez 3, então 3=3, então aqui ele precisa fazer. Lemrbrando que numero tá começando no indice 0-->
+                            <form action="/exercicio/{{ unidade }}/{{ numero }}?curso={{ secao }}&disciplina={{ disicplina_nome }}" method="POST">
+                                <button type="submit" class="exercicio cinza" data-title="Exercício {{ numero }}"></button> <!-- Mantém o estilo de exercício 1 via submit -->
+                            </form>
+                        {% else %}
+                            <div class="exercicio cinza" data-title="Exercício {{ numero }}"></div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="nova-aba" id="nova-aba" style="display: none;">
+    <h2 id="titulo">Informações sobre o Livro</h2>
+    <p id="descricao">Aqui estão os detalhes do livro. Este livro é sobre...</p>
+    <div id="mensagem-usuario"></div>
+    <button id="fechar">Fechar</button>
+</div>  
+{% endblock %}

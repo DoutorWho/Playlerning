@@ -1,0 +1,92 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/cadastro.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/cadastro.js') }}"></script>
+{% endblock %}
+{% block title %}Cadastro{% endblock %}
+{% block status %}{% endblock %}
+{% block body %}
+<section class="cadastro-section">
+    <h1>Cadastro</h1>
+    <p>Escolha abaixo se deseja se cadastrar como Aluno ou Professor, e preencha as informações correspondentes.</p>
+    {% set estilo = '' %}
+    {% if erro != '' %}
+        {% set estilo = 'Block'  %}
+    {% else %}
+        {% set estilo = 'None' %}
+    {% endif %}
+    <div class="error-message" style="display: {{ estilo }};">
+        {{ erro }}
+    </div>
+    <div class="role-selection-container">
+        <div class="role-block" id="studentBlock">
+            <img src="{{ url_for('static', filename='public/assents/img/estudante-escola.png') }}" alt="Imagem de Aluno" class="role-image">
+            <h3>Aluno</h3>
+            <p>Estudantes que estão buscando aprimorar seu conhecimento através de cursos e atividades.</p>
+            <button id="botaoestudante">Escolher Aluno</button>
+        </div>
+        
+        <div class="role-block" id="teacherBlock">
+            <img src="{{ url_for('static', filename='public/assents/img/professor-sala.png') }}" alt="Imagem de Professor" class="role-image">
+            <h3>Professor</h3>
+            <p>Professores que desejam compartilhar seus conhecimentos e ajudar os alunos a crescerem.</p>
+            <button id="botaoprofessor">Escolher Professor</button>
+        </div>
+    </div>
+</section>
+
+<form action="/cadastro-submit" method="post" enctype="multipart/form-data" id="registroFormAluno" class="hidden">
+    <div id="campoEstudante" class="hidden">
+        <input type="hidden" name="tipo_usuario" value="aluno">
+
+        <label for="nickname">Nickname:</label>
+        <input type="text" name="nickname" placeholder="Digite seu nickname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Digite seu nome email" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" placeholder="Digite sua senha"  minlength="8" required>
+        
+        <label for="curso">Escolha o curso:</label>
+        <select name="curso" id="curso" required>
+            <option value="enem">Enem</option>
+            <option value="informatica">Informática</option>
+        </select>
+        <div class="termos-container">
+            <input type="checkbox" id="concordo aluno" required> 
+            <label for="concordo" class="termos-text">
+                Você concorda com nossos <a href="termos_de_uso.html">termos de uso</a> e nossa <a href="politicas_de_privacidade.html">política de privacidade</a>.
+            </label>
+        </div>
+    </div>
+    <button type="submit">Cadastrar</button>
+    </form>
+<form action="/cadastro-submit" method="post" enctype="multipart/form-data" id="registroFormProfessor" class="hidden">
+    <div id="campoProfessor" class="hidden">
+        <input type="hidden" name="tipo_usuario" value="professor">
+
+        <label for="nickname">Nickname:</label>
+        <input type="text" name="nickname" placeholder="Digite seu nickname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="Digite seu nome email" required>
+        
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" placeholder="Digite sua senha" minlength="8" required>
+
+        <label for="curriculo">Curriculo:</label>
+        <input type="file" id="curriculo" name="curriculo" placeholder="Mande seu curriculo" required>
+        
+        <div class="termos-container">
+            <input type="checkbox" id="concordo professor" required> 
+            <label for="concordo" class="termos-text">
+                Você concorda com nossos <a href="termos_de_uso.html">termos de uso</a> e nossa <a href="politicas_de_privacidade.html">política de privacidade</a>.
+            </label>
+        </div>
+        <p>Observação: Seu cadastro ficará em análise, e se caso for aprovado, responderemos por email e você poderá acessar o site.</p>
+    </div>
+    <button type="submit">Cadastrar</button>
+</form>
+{% endblock %}

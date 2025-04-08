@@ -1,0 +1,43 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/login.css') }}">
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+{% block status %}{% endblock %}
+{% block body %}
+{% set estilo = '' %}
+{% if erro != '' %}
+    {% set estilo = 'Block'  %}
+{% else %}
+    {% set estilo = 'None' %}
+{% endif %}
+<div class="login-page">
+    <div class="login-container">
+        <h2>Bem-vindo de Volta!</h2>
+        <p class="login-instructions">Por favor, digite seu e-mail e sua senha para coninuar.</p>
+        <div class="error-message" style="display: {{ estilo }};">
+            {{ erro }}
+        </div>
+        <form action="/login-submit" method="post" id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Digite sua senha" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password"  id="password" name="senha"  placeholder="Digite sua senha" required>
+            </div>
+            <div id="error-message" class="error-message hidden">Invalid email or password. Please try again.</div>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        
+        <div class="login-extra">
+            <a href="#" class="forgot-password">Esqueceu a senha? Recupere!</a> | 
+            <a href="/cadastrar" class="sign-up">Não tem uma conta? Cadastra-se!</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

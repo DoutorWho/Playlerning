@@ -1,0 +1,32 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/forum_topicos.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/forum_topicos.js') }}"></script>
+{% endblock %}
+{% block title %}Fórum Pesquisa{% endblock %}
+
+{% block status %} {% endblock %}
+
+{% block body %}
+<header>
+  <h1>Busca por Tópicos</h1>
+  <form id="busca" class="search-bar">
+    <input type="text" name="pesquisa" id="search-input" placeholder="Buscar tópicos...">
+    <button>Buscar</button>
+  </form>
+</header>
+
+<main>
+  <section id="topics-list">
+    <!-- Os tópicos serão inseridos aqui dinamicamente -->
+  </section>
+
+  <div class="pagination" id="pagination">
+    <!-- Botões de paginação serão inseridos dinamicamente -->
+  </div>
+</main>
+
+
+
+{% endblock %}

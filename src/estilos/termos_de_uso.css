@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 20px;
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Modo escuro */
+
+
+body.dark-mode {
+    background-color: #121212; /* Cor de fundo no modo escuro */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+.dark-mode .container{
+    background: #1e1e1e; /* Cor de fundo no modo escuro para o contêiner */
+    border: 1px solid #333; /* Borda para o contêiner no modo escuro */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra mais pronunciada */
+}
+
+.dark-mode h1 {
+    color: #1e90ff; /* Azul brilhante para o título no modo escuro */
+}
+
+.dark-mode h2 {
+    color: #e0e0e0; /* Cor dos subtítulos no modo escuro */
+    border-bottom: 2px solid #1e90ff; /* Linha embaixo do subtítulo no modo escuro */
+}
+
+.dark-mode p {
+    color: #b0b0b0; /* Cor dos parágrafos no modo escuro */
+}
+
+.dark-mode a {
+    color: #1e90ff; /* Cor dos links no modo escuro */
+    text-decoration: none; /* Remover sublinhado padrão */
+}
+
+.dark-mode a:hover {
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+    color: #4da6ff; /* Cor do link ao passar o mouse */
+}
+
+.dark-mode ul {
+    color: #e0e0e0; /* Cor dos itens da lista no modo escuro */
+}
+
+.dark-mode li {
+    margin-bottom: 8px; /* Margem menor entre os itens da lista */
+}

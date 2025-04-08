@@ -1,0 +1,219 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/admin_partes.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/admin_partes.js') }}"></script>
+{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block status %}{% endblock %}
+
+{% block title %}Administrador{% endblock %} 
+{% block body %}
+{% if status == 'geral' %}
+    <div class="container">
+        <header>
+            <h1>🎯 Painel de Administração</h1>
+            <p class="description">Visão geral do sistema: estatísticas de usuários, tópicos, comentários e mais.</p>
+        </header>
+
+        <div class="info-grid">
+            <div class="info-block">
+                <h2>👥 Total de Usuários</h2>
+                <p class="stat-number">{{ dados['total_usuarios'] }}</p>
+            </div>  
+            <div class="info-block">
+                <h2>🔨 Usuários Banidos</h2>
+                <p class="stat-number">{{ dados['total_banidos'] }}</p>
+            </div>
+            <div class="info-block">
+                <h2>📚 Total de Tópicos</h2>
+                <p class="stat-number">{{ dados['total_topicos'] }}</p>
+            </div>
+            <div class="info-block">
+                <h2>💬 Total de Comentários</h2>
+                <p class="stat-number">{{ dados['total_comentarios'] }}</p>
+            </div>
+        </div>
+
+        <div class="search-section">
+            <h2>🔍 Pesquisar Usuário</h2>
+            <p>Digite o nome de usuário abaixo para verificar seu XP, rank, cargo e email.</p>
+            <input type="text" id="searchUser" name="nomeUsuario" placeholder="Digite o nome do usuário">
+            <button onclick="pesquisarUsuarioGeral()">Pesquisar</button>
+
+            <div class="informacoes_usuario" id="informacoes_usuario">
+                <!-- Resultados da pesquisa de punição serão mostrados aqui -->
+                <p><strong>Cargo:</strong> <span id="cargo"></span></p>
+                <p><strong>Rank:</strong> <span id="rank"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>XP:</strong> <span id="xp"></span></p>
+            </div>   
+            <p class="mensagem_erro_usuario" id="mensagem_erro_usuario">Não existe esse usuário</p>         
+        </div>
+    </div>
+{% elif status == 'punição' %}
+    <div class="container">
+        <header>
+            <h1>🔨 Painel de Punições</h1>
+            <p class="description">Gerenciamento de punições: banir usuários e consultar status de punições.</p>
+        </header>
+
+
+        <form action="/banir-usuario-submit" class="section ban-section" method="post">
+            <h2>Banir Usuário</h2>
+            <input type="text" name="forma"  id="banInput" placeholder="Nickname ou Email do usuário" required>
+            <br>
+            <select name="motivo" id="banReason" class="banReason" required>
+                <option value="" disabled selected>Selecione o Motivo do Banimento</option>
+                <option value="Discurso De Odio">Discurso de Ódio</option>
+                <option value="Racismo">Racismo</option>
+                <option value="Palavras Inapropriadas">Palavras Inapropriadas</option>
+                <option value="Plágio">Plágio</option>
+                <option value="Assédio">Assédio</option>
+                <option value="Spam">Spam</option>
+            </select>
+            <br>
+            <select name="status" id="status" class="status" required>
+                <option value="" disabled selected>Selecione o Status do Banimento</option>
+                <option value="permanente">Banimento Permanente</option>
+                <option value="2_dias">Banimento por 2 dias</option>
+                <option value="15_dias">Banimento por 15 dias</option>
+                <option value="30_dias">Banimento por 30 dias</option>
+                <option value="1_ano">Banimento por 1 ano</option>
+            </select>
+            <br>
+            <input type="text" name="link"  id="punishmentLink" placeholder="Link da Prova de Punição" required>
+            <button type="submit">Banir Usuário</button>
+        </form>
+
+        <div class="search-section">
+            <h2>🔍 Pesquisar Status de Punição</h2>
+            <p>Digite o nome de usuário abaixo para verificar o status de punição.</p>
+            <input type="text" id="searchPunishment" placeholder="Digite o nome do usuário">
+            <button onclick="VerificarPunicao()">Pesquisar</button>
+            
+            <p class="mensagem_erro_banimento" id="mensagem_erro_usuario">Este usuário não existe ou não foi banido!</p>      
+            <div class="punishment-info" id="punicao_status">
+                <!-- Resultados da pesquisa de punição serão mostrados aqui -->
+                <p id="nome"> João Silva</p>
+                <p id="email">leandro@gmail.com</p>
+                <p id="data">01/10/2024</p>
+                <p id="status_mensagem">Permanente</p>
+                <p id='motivo'>Uso de linguagem inapropriada</p>
+                <p id='prova'> Link para a prova fornecida</p>
+
+            </div>
+        </div>
+    </div>
+{% elif status == "aprovação" %}
+    <div class="approve-teachers-container"></div>
+        <header class="headeraprovar">
+            <h1>👩‍🏫 Aprovar Professores</h1>
+            <p class="description">Lista de professores aguardando aprovação.</p>
+        </header>
+
+        <div class="teacher-list">
+            <!-- A lista é:  [{'nickname': 'Juliana', 'cargo': 'professor', 'email': 'juliana@gmail.com', 'senha': '123456789', 'curriculo': 'temp/curriculos/professor_1/TCC.docx'}] -->
+            {% for informacao in dados %}
+            <form action="/aprovarprofessor-submit"  method="post" class="teacher-item"> 
+                <div class="teacher-info">
+                    <p><strong>Nickname:</strong> {{ informacao['nickname'] }}</p>
+                    <p><strong>Email:</strong> {{ informacao['email'] }} </p>
+                    <p><strong>Currículo:</strong>
+                    <a href="{{ url_for('static', filename=informacao['curriculo']) }}" class="curriculum" download>Baixar Currículo</a></p>
+                </div>
+                <input type="hidden"  name="email"  value="{{ informacao['email'] }}">
+                <button type="submit" name="botao" class="approve-button" value="aprovar">Aprovar</button>
+                <button type="submit" name="botao" class="reprove-button" value="reprovar">Reprovar</button>
+            </form>
+            {% endfor %}
+            <!-- Adicione mais professores conforme necessário -->  
+        </div>
+{% elif status == "adicionar_atividade" %}
+<div class="add-activity-container">
+    <section class="header">
+        <h1>📚 Estatísticas</h1>
+        <p class="description">Escolha uma categoria para saber as estásticas e excluir Atividades.</p>
+    </section>
+
+    <div class="activity-stats">
+        <div class="activity-box" onclick="location.href='/admin/todasatividades?secao=informatica'">
+            <span>💻</span>
+            <h2>Informática</h2>
+            <p id="quantidade_atividades_informatica">5 Atividades</p> <!-- Altere esse número dinamicamente -->
+        </div>
+        <div class="activity-box" onclick="location.href='/admin/todasatividades?secao=enem'">
+            <span>📝</span>
+            <h2>ENEM</h2>
+            <p id="quantidade_atividades_enem">3 Atividades</p> <!-- Altere esse número dinamicamente -->
+        </div>
+    </div>
+
+    <section class="header">
+        <h1>📚 Adicionar Atividades</h1>
+        <p class="description">Escolha uma categoria e preencha os detalhes da atividade.</p>
+    </section>
+
+    <div class="activity-form">
+        <label for="category">Selecione a Categoria:</label>
+        <select id="category" onchange="updateForm()" required>
+            <option value="" disabled selected>Escolha uma categoria</option>
+            <option value="informatica">Informática</option>
+            <option value="enem">ENEM</option>
+        </select>
+
+        <!-- Seção Informática -->
+        <div id="programming-section" class="hidden">
+            <h2>Informática - Lógica de Programação</h2>
+            <label for="unit">Unidade:</label>
+            <input type="text" id="unit" placeholder="Ex: Unidade 1">
+
+            <label for="programming-question">Pergunta:</label>
+            <input type="text" id="programming-question" placeholder="Digite a pergunta">
+
+            <label for="correct-answer">Número da Resposta Correta:</label>
+            <input type="text" id="correct-answer" placeholder="Digite o número da resposta correta">
+
+            <h3>Respostas:</h3>
+            <input type="text" class="answer" placeholder="Resposta 1">
+            <input type="text" class="answer" placeholder="Resposta 2">
+            <input type="text" class="answer" placeholder="Resposta 3">
+            <input type="text" class="answer" placeholder="Resposta 4">
+        </div>
+
+        <!-- Seção ENEM -->
+        <div id="enem-section" class="hidden">
+            <h2>ENEM</h2>
+            <label for="subject">Disciplina:</label>
+            <select id="subject" onchange="updateEnemFields()">
+                <option value="" disabled selected>Escolha uma disciplina</option>
+                <option value="humanas">Ciências Humanas</option>
+                <option value="naturais">Ciências Naturais</option>
+                <option value="matemática">Matemática</option>
+                <option value="linguagens">Linguagens</option>
+            </select>
+
+            <label for="enem-unit">Unidade:</label>
+            <input type="text" id="enem-unit" placeholder="Ex: Unidade 1">
+
+            <label for="enem-question">Pergunta:</label>
+            <input type="text" id="enem-question" placeholder="Digite a pergunta">
+
+            <label for="enem-correct-answer">Número da Resposta Correta:</label>
+            <input type="text" id="enem-correct-answer" placeholder="Digite o número da resposta correta">
+
+            <h3>Respostas:</h3>
+            <input type="text" class="answer" placeholder="Resposta 1">
+            <input type="text" class="answer" placeholder="Resposta 2">
+            <input type="text" class="answer" placeholder="Resposta 3">
+            <input type="text" class="answer" placeholder="Resposta 4">
+        </div>
+
+        <button onclick="addActivity()">Adicionar Atividade</button>
+    </div>
+</div>
+
+
+{% endif %}
+{% endblock %}

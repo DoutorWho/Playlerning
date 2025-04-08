@@ -1,0 +1,73 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/configuracoes.css') }}">
+{% endblock %}
+{% block nav %} {% endblock %}
+{% block status %} {% endblock %}
+{% block footer %} {% endblock %}
+{% block title %}{{ titulo }}{% endblock %}
+
+{% block body %}
+{% if status == 'mudar-senha' %}
+    <div class="container">
+        <h2>Alterar Senha</h2>
+        {% if mensagem == None %}
+            <div class="error-message" id="error-message">Erro: As senhas não coincidem.</div>
+        {% else %}
+            <div class="error-message" id="error-message" style="display: block;">Erro: As senhas não coincidem.</div>
+        {% endif %}
+        <form action="/configuracoes/mudarsenha" method="post" id="change-password-form">
+            <div class="input-group">
+                <label for="new-password">Nova Senha</label>
+                <input type="password" name="novasenha" id="new-password" minlength="8" required>
+            </div>
+            <div class="input-group">
+                <label for="confirm-password">Confirmar Senha</label>
+                <input type="password" name="confirmacao" id="confirm-password" minlength="8" required>
+            </div>
+            <button type="submit">Alterar Senha</button>
+        </form>
+    </div>
+
+<script>
+    var senha = document.getElementById('new-password');
+    var confirmar_senha = document.getElementById('confirm-password');
+    var errorMessage = document.getElementById('error-message');
+
+    function validatePasswords() {
+        if (senha.value.length < 8) {
+            senha.setCustomValidity('A senha deve ter pelo menos 8 caracteres.');
+        } else {
+            senha.setCustomValidity('');
+        }
+
+        if (confirmar_senha.value.length < 8) {
+            confirmar_senha.setCustomValidity('A senha deve ter pelo menos 8 caracteres.');
+        } else {
+            confirmar_senha.setCustomValidity('');
+        }
+
+        if (senha.value !== confirmar_senha.value) {
+            errorMessage.style.display = 'block';
+        } else {
+            errorMessage.style.display = 'none';
+        }
+    }
+
+    senha.addEventListener('input', validatePasswords);
+    confirmar_senha.addEventListener('input', validatePasswords);
+</script>
+
+{% elif status == 'excluir-conta' %}
+<div class="container">
+    <h2>Excluir Conta</h2>
+    <div class="warning-message">
+        <p><strong>Atenção:</strong> Esta ação é permanente. Se você excluir sua conta, não poderá recuperá-la e todos os seus dados serão perdidos.</p>
+    </div>
+    <form action="/configuracoes/deleteconta" method="post">
+        <button id="delete-account-button">Excluir Conta</button>
+    </form>
+
+{% endif %}
+{% endblock %}

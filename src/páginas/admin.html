@@ -1,0 +1,46 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/admin.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/admin.js') }}"></script>
+{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block status %}{% endblock %}
+
+{% block title %}Administrador{% endblock %} 
+{% block body %}
+<div class="container">
+    <h1>Painel de Administração</h1>
+    {% if cargo in ['ceo', 'administrador'] %}
+        <p class="description">
+            Bem-vindo ao painel de administração! Aqui você pode gerenciar todas as funcionalidades do servidor, desde revisar usuários até aprovar atividades e moderar professores. Utilize as seções abaixo para navegar pelas principais áreas do sistema.
+        </p>
+
+        <div class="section" onclick="window.location.href='/admin/geral'">
+            <h2>Geral</h2>
+            <p>Total de usuários, banimentos, tópicos, comentários, top 10 XP, e usuários por rank.</p>
+        </div>
+
+        <div class="section" onclick="window.location.href='/admin/punicao'">
+            <h2>Punições</h2>
+            <p>Adicionar banimentos e revisar motivos e provas dos usuários banidos.</p>
+        </div>
+
+        <div class="section" onclick="window.location.href='/admin/aprovacao'">
+            <h2>Aprovar Professores</h2>
+            <p>Lista de professores aguardando aprovação com detalhes do currículo.</p>
+        </div>
+        
+        <div class="section" onclick="window.location.href='/admin/adicionaratividades'">
+            <h2>Atividades</h2>
+            <p>Adicione novas atividades para informática ou ENEM, com categorias específicas ou veja as estásticas das atividades adicionadas.</p>
+        </div>
+    {% elif cargo in ['professor', 'ceo', 'administrador'] %}
+        <div class="section" onclick="window.location.href='/admin/adicionaratividades'">
+            <h2>Atividades</h2>
+            <p>Adicione novas atividades para informática ou ENEM, com categorias específicas ou veja as estásticas das atividades adicionadas.</p>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

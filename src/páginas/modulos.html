@@ -1,0 +1,76 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/modulos.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/modulos.js') }}"></script>
+{% endblock %}
+
+{% block nav %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+
+{% block title %}Cursos - Enem{% endblock %}
+
+{% block body %}
+<p id="tipo_categoria" style="display: none;">{{ tipo }}</p>
+{% if tipo == 'enem' %}
+    <!-- Main content -->
+    <div class="custom-content">
+        <!-- Title Section -->
+        <div class="module-title">
+            <h1>Módulo ENEM</h1>
+            <p>Explore os conteúdos do ENEM abaixo para começar sua preparação.</p>
+        </div>
+
+        <!-- Blocks Section -->
+        <div class="blocks-container">
+            <div class="custom-block" id="languages-block">
+                <img src="{{ url_for('static', filename='public/assents/img/linguagens-modo.png') }}" alt="Linguagens">
+                <h3>Linguagens</h3>
+                <p>Aprenda e revise os principais conteúdos de Línguas Estrangeiras e Língua Portuguesa.</p>
+                <p class="progress" id="progresso_enem_linguagens">📊 Progresso: 0%</p>
+            </div> 
+            <div class="custom-block" id="humanities-block">
+                <img src="{{ url_for('static', filename='public/assents/img/ciencias-humanas-modo.png') }}" alt="Ciências Humanas">
+                <h3>Ciências Humanas</h3>
+                <p>Estude História, Geografia e Filosofia para o ENEM com materiais completos.</p>
+                <p class="progress" id="progresso_enem_humanas">📊 Progresso: 0%</p>
+            </div>
+            <div class="custom-block" id="natural-sciences-block">
+                <img src="{{ url_for('static', filename='public/assents/img/ciencias-naturais-modo.png') }}" alt="Ciências Naturais">
+                <h3>Ciências Naturais</h3>
+                <p>Revise Biologia e Química para obter uma boa pontuação nas Ciências Naturais.</p>
+                <p class="progress" id="progresso_enem_naturais">📊 Progresso: 0%</p>
+            </div>
+            
+            <div class="custom-block" id="exact-sciences-block">
+                <img src="{{ url_for('static', filename='public/assents/img/ciencias-exatas-modo.png') }}" alt="Ciências Exatas">
+                <h3>Ciências Exatas</h3>
+                <p>Prepare-se com Matemática e Física para enfrentar o ENEM com confiança.</p>
+                <p class="progress" id="progresso_enem_exatas">📊 Progresso: 0%</p>
+            </div>
+        </div>
+    </div>
+{% else %}
+<!-- Main content -->
+<div class="custom-content">
+    <!-- Title Section -->
+    <div class="module-title">
+        <h1>Módulo Informática</h1>
+        <p>Explore os conteúdos de Informática abaixo para aprimorar suas habilidades.</p>
+    </div>
+
+    <!-- Blocks Section -->
+    <div class="blocks-container">
+        <div class="custom-block" id="logic-block">
+            <img src="{{ url_for('static', filename='public/assents/img/logica-de-programacao-mod.png') }}" alt="Lógica de Programação">
+            <h3>Lógica de Programação</h3>
+            <p>Aprenda a resolver problemas e criar algoritmos utilizando Portugol e outras técnicas.</p>
+            <p class="progress" id="progresso_informatica_logica">📊 Progresso: 0%</p>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

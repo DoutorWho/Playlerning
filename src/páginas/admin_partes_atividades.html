@@ -1,0 +1,51 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/admin_partes_atividades.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/admin_partes_atividades.js') }}"></script>
+{% endblock %}
+{% block nav %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block status %}{% endblock %}
+
+{% block title %}Administrador | Atividades{% endblock %} 
+{% block body %}
+<div class="container">
+    <h1>Escolha uma Seção e Unidade</h1>
+    
+    <!-- Escolha de Seções -->
+    {% if secao == 'enem' %}
+        <div class="sections">
+            <button class="section-btn" data-section="Humanas">Humanas 📚</button>
+            <button class="section-btn" data-section="exatas">Matemática ➗</button>
+            <button class="section-btn" data-section="Naturais">Naturais 🔬</button>
+            <button class="section-btn" data-section="Linguagens">Linguagens 📖</button>
+        </div>
+    {% else %}
+        <div class="sections">
+            <button class="section-btn" data-section="logica">Logica</button>
+        </div>
+    {% endif %}
+    <!-- Escolha de Unidades -->
+    <div class="unit-selection hidden">
+        <h2>Escolha uma Unidade</h2>
+        <div id="unit-buttons">
+            <button class="unit-btn" data-unit="1">Unidade 1</button>
+            <button class="unit-btn" data-unit="2">Unidade 2</button>
+            <button class="unit-btn" data-unit="3">Unidade 3</button>
+            <button class="unit-btn" data-unit="4">Unidade 4</button>
+        </div>
+    </div>
+
+    <!-- Informações de Atividades -->
+    <div class="activity-info hidden">
+        <p>Seção: <span id="selected-section"></span></p>
+        <p>Unidade: <span id="unit-number"></span></p>
+        <p id="activity-count">0 Atividades</p>
+    </div>
+
+    <!-- Contêiner para Atividades -->
+    <div id="activity-container" class="hidden"></div>
+    <div id="no-activities-message" class="hidden">Não há atividades disponíveis.</div>
+</div>
+{% endblock %}

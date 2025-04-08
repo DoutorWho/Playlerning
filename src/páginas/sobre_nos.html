@@ -1,0 +1,79 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/sobre_nos.css') }}">
+{% endblock %}
+
+{% block title %}Sobre nós{% endblock %}
+{% block status %}{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>Sobre Nós</h1>
+    <p class="explicacao">Este projeto é o resultado de meses de dedicação e criatividade, desenvolvido como parte do nosso Trabalho de Conclusão de Curso (TCC). Nossa equipe está empolgada para apresentar esta obra no Hacker Day 2024. Composta por 5 jovens, todos estudantes do colégio estudual góes calmon, nossa equipe combina talentos diversos para criar uma solução inovadora e impactante. Cada um de nós trouxe uma paixão única para o projeto, e juntos, buscamos redefinir os limites do que é possível com tecnologia e design.</p>
+    <img src="imagem" class="imagemequipe"  alt="Imagem da equipe">
+
+    <div class="team">
+        <!-- Membro 1 -->
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='public/assents/profile-pictures/doutorwho.png') }}" alt="DoutorWho">
+            <h3>DoutorWho</h3>
+            <p>Programador</p>
+            <p class="bio">Entusiasta em desenvolvimento back end e apaixonado por resolver problemas complexos com código.</p>
+            <div class="social-links">
+                <a href="discord_dorwho"><img src="{{ url_for('static', filename='public/assents/img/discord.svg') }}" alt="Discord"></a>
+                <a href="github_doutorwho"><img src="{{ url_for('static', filename='public/assents/img/github.png') }}" alt="GitHub"></a>
+            </div>
+        </div>
+
+        <!-- Membro 2 -->
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='public/assents/profile-pictures/sarah.png') }}" alt="Sarah">
+            <h3>Sarah</h3>
+            <p>Design</p>
+            <p class="bio">Apaixonada por telas e cores, gosto de brincar um pouco com a programação</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/behance-icon.png" alt="Behance"></a>
+            </div>
+        </div>
+
+        <!-- Membro 3 -->
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='public/assents/profile-pictures/gabi.png') }}" alt="Gabrielle">
+            <h3>Gabrielle</h3> 
+            <p>Design</p>
+            <p class="bio">Escreva o seu.</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/behance-icon.png" alt="Behance"></a>
+            </div>
+        </div>
+
+        <!-- Membro 4 -->
+        <div class="team-member">
+            <img src="caminho-para-imagem-4.jpg" alt="Leonardo">
+            <h3>Leonardo</h3>
+            <p>Não sei</p>
+            <p class="bio">Escreva o seu..</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/twitter-icon.png" alt="Twitter"></a>
+            </div>
+        </div>
+
+        <!-- Membro 5 -->
+        <div class="team-member">
+            <img src="{{ url_for('static', filename='public/assents/profile-pictures/caua.png') }}" alt="Cauã">
+            <h3>Cauã</h3>
+            <p>Marketing</p>
+            <p class="bio">Escreva o seu.</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

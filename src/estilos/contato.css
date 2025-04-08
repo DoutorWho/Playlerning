@@ -1,0 +1,138 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+    color: #333;
+}
+
+.contact-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #0073e6;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card h2 {
+    color: #0073e6;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.contact-card p {
+    color: #555;
+    margin: 5px 0;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+    .contact-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        max-width: 100%;
+    }
+}
+
+/* Modo escuro */
+
+body.dark-mode {
+    background-color: #121212; /* Cor de fundo no modo escuro */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+.dark-mode .contact-container {
+    background: #1e1e1e; /* Cor de fundo no modo escuro para o contêiner */
+}
+
+.dark-mode h1 {
+    color: #3b82f6; /* Cor do título no modo escuro */
+}
+
+.dark-mode p {
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+.dark-mode .contact-card {
+    background: #2a2a2a; /* Cor de fundo para o cartão de contato */
+    color: #e0e0e0; /* Cor do texto no cartão de contato */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra para o cartão de contato */
+}
+
+.dark-mode .contact-card h2 {
+    color: #3b82f6; /* Cor dos subtítulos no modo escuro */
+}
+
+.dark-mode .contact-card p {
+    color: #ccc; /* Cor dos parágrafos no cartão de contato */
+}
+
+.dark-mode .social-links a {
+    color: #3b82f6; /* Cor dos links sociais no modo escuro */
+}

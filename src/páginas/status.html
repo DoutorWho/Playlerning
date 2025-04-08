@@ -1,0 +1,208 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/status.css') }}">
+<script src="{{ url_for('static', filename='src/scripts/scripts/status.js') }}"></script>
+{% endblock %}
+{% block nav %} {% endblock %}
+{% block footer %} {% endblock %}
+{% block title %}{{ titulo }}{% endblock %}
+
+{% block body %}
+    {% if status == 'perfil' %}
+    <!-- Profile Section -->
+    <div class="profile-section hidden">
+        <h1>Perfil do Usuário</h1>
+        <div class="profile-header">
+            <img src="{{ url_for('static', filename='uploads/user-pictures/'+perfil['foto']) }}" alt="Logo do Usuário" class="user-logo">
+            <div class="user-info">
+                <h2 id="user-name">{{ perfil['nickname'] }}</h2>
+                <p id="user-rank">Rank: <span>{{ perfil['rank'] }}</span></p>
+                <p id="user-xp">XP: <span>{{ perfil['xp'] }}</span></p>
+            </div>
+        </div>
+
+        <!-- Seção de Ofensiva -->
+        <div class="user-offensive">
+            <h2>Status</h2>
+            <div class="offensive-info">
+                <p><strong>Ofensiva:</strong> <span id="daily-studies">{{ perfil['ofensiva'] }}</span></p>
+                <p><strong>Quantidade de dias jogados:</strong> <span id="total-days">{{ perfil['quantidade_dias_jogados']  }}</span></p>
+                <p><strong>Último dia que estudou:</strong> <span id="last-study">{{ perfil['ultimo_dia_jogado'] }}</span></p>
+            </div>
+        </div>
+    </div>
+    {% elif status == 'missoes' %}
+    <!-- Missions Section -->
+    {% if missao[0] == None %}
+        <div class="missions-section hidden">
+            <h1>Missões</h1>
+            <!-- Missões Ativas -->
+            <div class="active-missions">
+                <h2>Missões Ativas</h2>
+                {% for mostrar in missao[1].values() %}
+                <ul class="missions-list">
+                    <li class="mission-item">
+                        <div class="mission-details">
+                            <h3>{{ mostrar['nome'] }}</h3>
+                            <p>{{ mostrar['descrição'] }}</p>
+                        </div>
+                        <div class="mission-progress">
+                            <progress value="{{ mostrar['faltando'] }}" max="100"></progress>
+                            <span>{{ mostrar['faltando'] }}%</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </div>
+        {% else %}
+        <div class="missions-section hidden">
+            <h1>Missões</h1>
+            <!-- Missões Ativas -->
+            <div class="active-missions">
+                <h2>Missões Ativas</h2>
+                {% for mostrar in missao[1][1] %}
+                <ul class="missions-list">
+                    <li class="mission-item">
+                        <div class="mission-details">
+                            <h3>{{ mostrar['nome'] }}</h3>
+                            <p>{{ mostrar['descrição'] }}</p>
+                        </div>
+                        <div class="mission-progress">
+                            <progress value="{{ mostrar['faltando'] }}" max="100"></progress>
+                            <span>{{ mostrar['faltando'] }}%</span>
+                        </div>
+                    </li>
+                </ul>
+                {% endfor %}
+            </div>
+        <!-- Missões Completas -->
+        <div class="completed-missions">
+            <h2>Missões Completas</h2>
+            {% for mostrar in missao[1][0] %}
+            <ul class="missions-list">
+                <li class="mission-item completed">
+                    <div class="mission-details">
+                        <h3>{{ mostrar['nome'] }}</h3>
+                        <p>Recompensa: {{ mostrar['xp'] }} xp.</p>
+                    </div>
+                    <span class="mission-status">Completada</span>
+                </li>
+                <!-- Adicione mais missões completas conforme necessário -->
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% elif status == 'rank' %}
+    <!-- Rank Section -->
+    <div class="rank-section hidden">
+        <h1>Ranking</h1>
+        
+        <!-- Rank do Usuário -->
+        <div class="user-rank">
+            <h2>Seu Rank</h2>
+            <div class="rank-badge">
+                <img src="{{ url_for('static', filename='public/assents/profile-pictures/' + rank[0][0]['rank']) + '.jpg' }}" alt="Imagem do Rank" id="user-rank-image">
+                <p id="user-rank-name">{{ rank[0][0]['rank'] }}</p>
+            </div>
+            <p id="user-global-position">Sua Posição Global: <span>{{ rank[0][0]['posicao'] }}</span></p>
+        </div>
+        
+        <!-- Lista dos Top 10 -->
+        <div class="top-10">
+            <h2>Top 10</h2>
+            <ul class="rank-list">
+                {% for mostrar in rank[1] %}
+                <li class="rank-item">
+                    <img src="{{ url_for('static', filename='uploads/user-pictures/' + mostrar['foto_perfil']) }}" alt="Top Usuário 1" class="rank-avatar">
+                    <div class="rank-details">
+                        <span class="rank-name">{{ mostrar['usuario'] }}</span>
+                        <span class="rank">Rank: {{ mostrar['rank'] }}</span>
+                        <span class="rank-xp">XP: {{ mostrar['xp'] }}</span>
+                    </div>
+                </li>
+            </ul>
+            {% endfor %}
+        </div>        
+        
+        <!-- Usuário Atual -->
+        <div class="your-rank">
+            <h2>Você</h2>
+            <div class="rank-item">
+                <img src="{{ url_for('static', filename='uploads/user-pictures/' + rank[0][0]['foto_perfil']) }}" alt="Seu Avatar" class="rank-avatar">
+                <div class="rank-details">
+                    <span class="rank-name">{{ rank[0][0]['usuario'] }}</span>
+                    <span class="rank-xp">XP: {{ rank[0][0]['xp'] }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Settings Section (Initially Hidden) -->
+    {% elif status == 'configuracoes' %}
+    <div class="settings-section hidden">
+        <h1>Configurações</h1>
+        <form action="/configuracoes" method="post" id="settings-form" enctype="multipart/form-data">
+            <div class="setting-category">
+                <h2>Geral</h2>
+                <div class="setting-item">
+                    <label for="dark-mode-toggle">Escolha o Modo</label>
+                    <div class="mode-selection">
+                        <label>
+                            <input type="radio" name="tema" value="claro" checked>
+                            ☀️ Modo Claro
+                        </label>
+                        <label>
+                            <input type="radio" name="tema" value="escuro">
+                            🌙 Modo Escuro
+                        </label>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="escolha-curso">Escolha seu curso</label>
+                    <select id="escolha-curso" name="curso">
+                        <option value="enem">Enem</option>
+                        <option value="informatica">Informática</option>
+                    </select>
+                </div>
+            </div>
+    
+            <div class="setting-category">
+                <h2>Conta</h2>
+                <div class="setting-item">
+                    <label for="nickname">📝 Alterar Nickname</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="Novo nickname" style="width: 180px; height: 3vh;">
+                </div>
+                <div class="setting-item">
+                    <label for="profile-picture">🖼️ Alterar Foto de Perfil</label>
+                    <input type="file" id="profile-picture" name="imagem_usuario" accept="image/*">
+                </div>
+                <div class="setting-item">
+                    <button type="button" id="change-password">🔑 Mudar Senha</button>
+                </div>            
+    
+                <div class="setting-item">
+                    <a href="/forum"><button type="button" id="open-ticket">🎫 Acessar o Fórum</button></a>
+                </div>
+                <div class="setting-item">
+                    <button type="button" id="logout">🚪 Sair da Conta</button>
+                </div>
+                <div class="setting-item">
+                    <button type="button" id="delete-account" class="danger">🗑️ Excluir Conta</button>
+                </div>
+            </div>
+    
+            <div class="setting-category">
+                <h2>Notificações</h2>
+                <div class="setting-item">
+                    <label for="email-notifications">📧 Notificações por Email</label>
+                    <input type="checkbox" id="email-notifications" name="email_notifications">
+                </div>
+            </div>
+    
+            <div class="form-actions">
+                <button type="submit" id="save-changes">💾 Salvar Alterações</button>
+            </div>
+        </form>
+    </div>    
+{% endif %}
+{% endblock %}

@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+    color: #0073e6;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.team-member {
+    background: linear-gradient(145deg, #f9f9f9, #e0e0e0);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.team-member:hover img {
+    transform: rotate(360deg);
+}
+
+.team-member h3 {
+    margin: 10px 0 5px;
+    font-size: 1.4em;
+    color: #0073e6;
+}
+
+.team-member p {
+    color: #777;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.team-member .bio {
+    font-style: italic;
+    color: #555;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 5px;
+    transition: transform 0.3s;
+}
+
+.social-links a img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Modo escuro */
+
+body.dark-mode {
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto em um tom claro */
+}
+
+.dark-mode .container {
+    background: #1e1e1e; /* Fundo do container em modo escuro */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Sombra mais clara */
+}
+
+.dark-mode h1 {
+    color: #82b1ff; /* Cor do título em modo escuro, mais clara */
+}
+
+.dark-mode .team-member {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a); /* Gradiente escuro */
+    border: 1px solid #444; /* Borda em modo escuro */
+}
+
+.dark-mode .team-member h3 {
+    color: #bbdefb; /* Cor do nome do membro em modo escuro, mais clara */
+}
+
+.dark-mode .team-member p {
+    color: #e0e0e0; /* Cor do texto em modo escuro, mais clara */
+}
+
+.dark-mode .explicacao {
+    color: beige;
+}
+
+.dark-mode .team-member .bio {
+    color: #c1c1c1; /* Cor da bio em modo escuro */
+}
+
+.dark-mode .social-links a {
+    color: #bbdefb; /* Cor dos links sociais em modo escuro */
+}
+
+.dark-mode .social-links a img {
+    filter: brightness(0) invert(1); /* Inverte a cor das imagens para ficar visível */
+}
+
+.dark-mode .social-links a:hover {
+    transform: scale(1.2);
+}

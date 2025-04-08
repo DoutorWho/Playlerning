@@ -1,0 +1,67 @@
+{% extends '/componentes/base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='src/estilos/contato.css') }}">
+{% endblock %}
+{% block title %}Contato{% endblock %}
+{% block status %}{% endblock %}
+
+{% block body %}
+<div class="contact-container">
+    <h1>Entre em Contato</h1>
+    <p>Quer saber mais sobre o nosso projeto ou colaborar com a nossa equipe? Fique à vontade para nos enviar uma mensagem!</p>
+
+    <div class="contact-info">
+        <div class="contact-card">
+            <h2>DoutorWho - Programador</h2>
+            <p>Email: doutorwho@gmail.com</p>
+            <p>Telefone: (71) 99999-9999</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/github-icon.png" alt="GitHub"></a>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>Sarah - Design</h2>
+            <p>Email: sarah@gmail.com</p>
+            <p>Telefone: (71) 99999-9999</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/behance-icon.png" alt="Behance"></a>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>Gabrielle - Design</h2>
+            <p>Email: gabrielle@gmail.com</p>
+            <p>Telefone: (71) 99999-9999</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/behance-icon.png" alt="Behance"></a>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>Leonardo - Sei lá</h2>
+            <p>Email: leonardo@gmail.com</p>
+            <p>Telefone: (71) 99999-9999</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/twitter-icon.png" alt="Twitter"></a>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>Cauã - Marketing</h2>
+            <p>Email: caua@gmail.com</p>
+            <p>Telefone: (71) 99999-9999</p>
+            <div class="social-links">
+                <a href="#"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="#"><img src="path/to/instagram-icon.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
