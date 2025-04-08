@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="./public/assents/img/imagem-projeto.png" width="700" height="700" alt="Dashboard Estudo Gamificado"/>
+  <img src="./public/assents/img/imagem-projeto.png" width="700" alt="Dashboard Estudo Gamificado"/>
 </p>
 
 <hr>
@@ -89,7 +89,7 @@
 <h2>📸 Ilustração da Plataforma</h2>
 
 <p align="center">
-  <img src="https://i.imgur.com/bHHmZOl.png" width="700" alt="Ilustração Plataforma"/>
+  <img src="./public/assents/img/imagem-projeto-estudos.png" width="700" alt="Ilustração Plataforma"/>
 </p>
 
 <hr>
