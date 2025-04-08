@@ -64,7 +64,7 @@
 </ul>
 
 <p align="center">
-  <img src="./public/assents/img/imagem-projeto-estudos" width="600" alt="Ranking Sistema">
+  <img src="./public/assents/img/imagem-projeto-estudos.png" width="600" alt="Ranking Sistema">
 </p>
 
 <hr>
