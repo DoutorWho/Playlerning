@@ -1,0 +1,38 @@
+[
+    {
+        "nome": "enem",
+        "disciplina": "linguagens",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    },
+    {
+        "nome": "enem",
+        "disciplina": "humanas",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    },
+    {
+        "nome": "enem",
+        "disciplina": "naturais",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    },
+    {
+        "nome": "enem",
+        "disciplina": "exatas",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    },
+    {
+        "nome": "informatica",
+        "disciplina": "logica",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    },
+    {
+        "nome": "informatica",
+        "disciplina": "programacao",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    },
+    {
+        "nome": "informatica",
+        "disciplina": "bancodedados",
+        "unidade_1": ["None", "None", "None", "None", "None"]
+    }
+    
+]

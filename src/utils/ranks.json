@@ -1,0 +1,31 @@
+{
+    "Diamante": {
+        "xp": 500,
+        "rank_foto": "",
+        "mensagem": "Parabéns! Você chegou ao rank Diamante!"
+
+    },
+    "Platina": {
+        "xp": 250,
+        "rank_foto": "",
+        "mensagem": "Parabéns! Você chegou ao rank Plátina!"
+    },
+    "Ouro": {
+        "xp": 150,
+        "rank_foto": "",
+        "mensagem": "Parabéns! Você chegou ao rank Ouro!"
+    },
+    "Prata": {
+        "xp": 100,
+        "rank_foto": "",
+        "mensagem": "Parabéns! Você chegou ao rank Prata!"
+    },
+    "Bronze": {
+        "xp": 0,
+        "rank_foto": "",
+        "mensagem": "Parabéns! Você chegou ao rank Bronze!"
+
+    }
+
+
+}

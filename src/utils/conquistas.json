@@ -1,0 +1,17 @@
+{
+    "1": {
+        "nome": "Estudioso",
+        "descrição": "Conquiste 100 dias jogados",
+        "faltam": "Você tem {} dias de jogados",
+        "xp": 250
+    },
+
+    "2": {
+        "nome": "Impáravel",
+        "descrição": "Conquiste 300 dias jogados", 
+        "faltam": "Você tem {} dias de jogados",
+        "xp": 500
+
+    }
+}
+
