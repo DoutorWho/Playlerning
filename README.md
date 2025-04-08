@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="./public/assents/img/imagem-projeto.png" width="700" alt="Dashboard Estudo Gamificado"/>
+  <img src="./public/assents/img/imagem-projeto.png" width="500" alt="Dashboard Estudo Gamificado"/>
 </p>
 
 <hr>
