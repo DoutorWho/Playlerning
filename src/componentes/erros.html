@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro {{ codigo }} - {{ descricao }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/componentes/erros.css') }}">
+    <script src="{{ url_for('static', filename='src/componentes/erros.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="error-content">
+            <div class="error-image">
+                <img src="https://compras.wiki.ufsc.br/images/5/56/Erro.png" alt="Erro 404">
+            </div>
+            <h1>Oops!</h1>
+            <p>{{ descricao_detalhada }}</p>
+            <p class="error-code">{{ codigo }}</p>
+            <p>Volte à nossa <a href="/" id="home-link">página inicial</a>.</p>
+            <button id="home-button">Voltar para a página inicial</button>
+        </div>
+    </div>
+</body>
+</html>

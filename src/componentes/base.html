@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ url_for('static', filename='public/assents/img/logo.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='src/componentes/base.css') }}">
+    <script src="{{ url_for('static', filename='src/componentes/base.js') }}"></script>
+    {% block head %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% block status %}
+    <div class="custom-sidebar">
+        <div class="custom-sidebar-header">
+            <h2>PlayLearning</h2>
+        </div>
+        <ul class="custom-sidebar-menu">
+            <li><a href="#" id="profile-link">👤 Perfil</a></li>
+            <li><a href="#" id="learn-link">📘 Aprender</a></li>
+            <li><a href="#" id="missions-link">🎯 Missões</a></li>
+            <li><a href="#" id="ranks-link">🏆 Ranks</a></li>
+            <li><a href="#" id="settings-link">⚙️ Configurações</a></li>
+        </ul>
+    </div>
+    {% endblock %}
+
+    {% block nav %}
+        <nav class="nav">
+        </nav>
+
+    {% endblock %}
+    {% block body %}{% endblock %}
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="links">
+            <a href="/sobrenos">Sobre nós</a>
+            <a href="/servicos">Serviços</a>
+            <a href="/politica">Política de Privacidade</a>
+            <a href="/termodeuso">Termos de Uso</a>
+            <a href="/contato">Contato</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><img src="{{ url_for('static', filename='public/assents/img/Instagram_logo_2022.svg.png') }}" alt="Instagram"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="{{ url_for('static', filename='public/assents/img/twitter_logo.png') }}" alt="Twitter"></a>
+            <a href="https://www.youtube.com" target="_blank"><img src="{{ url_for('static', filename='public/assents/img/youtube-logo-youtube-icon-transparent-free-png.png') }}" alt="YouTube"></a>
+        </div>
+        <div class="contato-informacao">
+            <span>Email: playlerning@gmail.com</span>
+            <span>Telefone: (71) 1234-5678</span>
+        </div>
+        <p>© 2024 Todos os direitos reservados</p>
+    </footer>
+    {% endblock %}
+</body>
+</html>
