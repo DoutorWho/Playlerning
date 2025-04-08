@@ -101,6 +101,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.icons8.com/clouds/100/github.png" width="40"/> <br>
-  <strong>Feito com ❤️ por uma mente apaixonada por ensino e tecnologia.</strong>
+  <a href="https://github.com/doutorwho" target="_blank">
+    <img src="https://img.icons8.com/clouds/100/github.png" width="40"/>
+  </a>
+  <br>
+  <strong>Feito com ❤️ por uma mente apaixonada por tecnologia.</strong>
 </p>
