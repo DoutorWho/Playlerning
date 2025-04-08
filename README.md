@@ -20,8 +20,6 @@
   <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"/>
   <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
   <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"/>
-  <img src="https://img.icons8.com/ios-filled/48/flask.png" alt="Flask" title="Flask" style="filter: invert(1); background-color: #000; border-radius: 8px; padding: 4px;"/>
-  <img src="https://img.icons8.com/ios-filled/48/sql.png" alt="SQL" title="SQL" />
 </p>
 
 <ul>
