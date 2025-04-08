@@ -1,25 +1,33 @@
 <h1 align="center">
-  <img src="https://img.icons8.com/color/96/000000/books.png" width="50"/>
-  <br>Playlerning
+  <img src="https://img.icons8.com/fluency/96/graduation-cap.png" width="60"/>
+  <br><strong>Playlerning</strong>
 </h1>
 
 <p align="center">
-  <strong>📚 Sua plataforma interativa de estudos com gamificação, desafios e fóruns!</strong><br>
-  <em>Aprender nunca foi tão divertido. Prepare-se para evoluir de Bronze a Diamante! 💎</em>
+  🌟 Uma plataforma de estudos gamificada e interativa! Aprenda, evolua, ganhe XP e exiba suas conquistas! 🚀
 </p>
 
 <p align="center">
-  <img src="https://cdn.dribbble.com/users/112648/screenshots/1742062/media/cdf64bcdfe2c5614d4a328b3ec69cfd2.gif" width="600" alt="Estudo Interativo">
+  <img src="https://i.imgur.com/nWxZqak.png" width="700" alt="Dashboard Estudo Gamificado"/>
 </p>
 
 <hr>
 
 <h2>🚀 Tecnologias Utilizadas</h2>
 
+<p>
+  <img src="https://img.icons8.com/color/48/html-5--v1.png" alt="HTML5"/>
+  <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"/>
+  <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"/>
+  <img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"/>
+  <img src="https://img.icons8.com/ios-filled/48/flask.png" alt="Flask" title="Flask" style="filter: invert(1); background-color: #000; border-radius: 8px; padding: 4px;"/>
+  <img src="https://img.icons8.com/ios-filled/48/sql.png" alt="SQL" title="SQL" />
+</p>
+
 <ul>
-  <li><strong>HTML5</strong>, <strong>CSS3</strong> e <strong>JavaScript</strong></li>
-  <li><strong>Python</strong> com <code>Flask</code> e <code>Flask_SQLAlchemy</code></li>
-  <li><strong>SQL</strong> para gerenciamento de banco de dados</li>
+  <li><strong>HTML5, CSS3 e JavaScript</strong> – Estrutura e interatividade do front-end</li>
+  <li><strong>Python + Flask + Flask_SQLAlchemy</strong> – Backend moderno e escalável</li>
+  <li><strong>SQL</strong> – Gerenciamento de banco de dados e progresso do usuário</li>
 </ul>
 
 <hr>
@@ -28,125 +36,73 @@
 
 <pre>
 📁 public
- ┣ 📂 images        # Imagens públicas (ícones, ilustrações, banners)
+ ┣ 📂 images        # Imagens públicas (ícones, banners, ilustrações)
  ┣ 📂 fonts         # Fontes customizadas
- ┗ 📂 ...           # Arquivos CSS, JS, etc
+ ┗ 📂 ...           # Arquivos CSS, JS etc.
 
 📁 src
- ┣ 📂 models        # Modelos do banco (SQLAlchemy)
- ┣ 📂 routes        # Rotas Flask
- ┣ 📂 templates     # HTML com Jinja2
- ┗ 📂 ...           # Demais arquivos backend
+ ┣ 📂 models        # Modelos ORM com SQLAlchemy
+ ┣ 📂 routes        # Rotas e lógicas de servidor (Flask)
+ ┣ 📂 templates     # Páginas HTML com Jinja2
+ ┗ 📂 ...           # Backend e lógica principal
 </pre>
 
 <hr>
 
-<h2>🧩 Funcionalidades</h2>
+<h2>📘 Como Funciona a Plataforma</h2>
 
 <ul>
   <li>🎮 <strong>Dois modos de estudo:</strong> ENEM e Informática</li>
   <li>📖 <strong>Disciplinas com livros digitais e questionários</strong></li>
-  <li>🏆 <strong>Ranks:</strong> Bronze, Prata, Ouro, Platina e Diamante</li>
-  <li>🧠 <strong>XP por desempenho:</strong> acertos geram experiência</li>
-  <li>🚫 <strong>Reprovação se < 50%</strong> nas seções</li>
-  <li>💬 <strong>Fórum interativo:</strong> dúvidas, respostas e exibição de insígnias</li>
-  <li>🎯 <strong>Missões:</strong> desafios diários e metas de XP</li>
-  <li>👨‍🏫 <strong>Modo Professor:</strong> criação de conteúdos e atividades</li>
+  <li>📚 <strong>5 Unidades por disciplina</strong>, cada uma com:
+    <ul>
+      <li>1 Livro teórico</li>
+      <li>5 Seções com 10 questões cada</li>
+    </ul>
+  </li>
+  <li>🏆 <strong>Ranks:</strong> Bronze → Prata → Ouro → Platina → Diamante</li>
+  <li>🧠 <strong>Sistema de XP:</strong> acertos rendem pontos e evoluções</li>
+  <li>❌ <strong>Reprovação:</strong> menos de 50% = refazer a seção</li>
 </ul>
 
 <p align="center">
-  <img src="https://cdn.dribbble.com/users/1033274/screenshots/16484880/media/1d3c370feae84a25b24968a3b75b95cd.png" width="500">
+  <img src="https://i.imgur.com/Y3n3w7z.png" width="600" alt="Ranking Sistema">
 </p>
 
 <hr>
 
-<h2>📘 Organização do Estudo</h2>
-
-<p>
-Ao escolher um modo (ENEM ou Informática), o usuário acessa:
-</p>
+<h2>🧩 Recursos Extras</h2>
 
 <ul>
-  <li>🔹 <strong>5 Unidades</strong> por disciplina</li>
-  <li>🔹 Cada unidade possui 1 livro digital</li>
-  <li>🔹 <strong>5 seções por unidade</strong>, com <strong>10 perguntas cada</strong></li>
+  <li>💬 <strong>Fórum interativo:</strong> Tire dúvidas, responda colegas e exiba insígnias</li>
+  <li>🎯 <strong>Missões:</strong> como jogar por 10 dias seguidos ou ganhar XP específico</li>
+  <li>👨‍🏫 <strong>Modo Professor:</strong>
+    <ul>
+      <li>Criação de livros e atividades</li>
+      <li>Interação no fórum</li>
+      <li>Cadastro mediante envio de currículo</li>
+    </ul>
+  </li>
+  <li>🔒 <strong>Moderação:</strong> Termos de uso e políticas de privacidade respeitados</li>
 </ul>
 
-<p>
-✅ Ao acertar 50% ou mais, ganha XP e avança.<br>
-❌ Abaixo disso, precisa refazer a seção.
-</p>
+<hr>
+
+<h2>📸 Ilustração da Plataforma</h2>
 
 <p align="center">
-  <img src="https://cdn.dribbble.com/users/3439312/screenshots/14643439/media/fb93bb93c2f03bb6b2fbd12ab7dc49b5.png" width="600">
+  <img src="https://i.imgur.com/bHHmZOl.png" width="700" alt="Ilustração Plataforma"/>
 </p>
 
 <hr>
 
-<h2>🏅 Missões & Insígnias</h2>
-
-<p>
-  Os usuários podem conquistar e exibir suas conquistas no fórum através de insígnias como:
-</p>
-
-<ul>
-  <li>🔥 <strong>Ofensiva de 10 dias:</strong> estudar por 10 dias consecutivos</li>
-  <li>💡 <strong>Metas de XP:</strong> alcançar marcos de experiência</li>
-</ul>
-
-<p align="center">
-  <img src="https://img.icons8.com/external-flat-icons-inmotus-design/100/external-achievement-education-flat-icons-inmotus-design.png" width="120">
-</p>
-
-<hr>
-
-<h2>👤 Modo Aluno vs. Modo Professor</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>🎓 Aluno</th>
-      <th>👨‍🏫 Professor</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Lê livros e responde atividades</td>
-      <td>Cria livros e atividades</td>
-    </tr>
-    <tr>
-      <td>Participa do fórum e missões</td>
-      <td>Responde dúvidas no fórum</td>
-    </tr>
-    <tr>
-      <td>Ganha XP e insígnias</td>
-      <td>Precisa enviar currículo para aprovação</td>
-    </tr>
-  </tbody>
-</table>
-
-<hr>
-
-<h2>📜 Termos & Moderação</h2>
-
-<ul>
-  <li>🔐 <strong>Política de Privacidade</strong> e <strong>Termos de Uso</strong></li>
-  <li>🛡 <strong>Moderação ativa</strong> para evitar abusos e infrações</li>
-</ul>
-
-<p align="center">
-  <img src="https://img.icons8.com/fluency/96/privacy-policy.png" width="120">
-</p>
-
-<hr>
-
-<h2>📬 Contato & Contribuição</h2>
+<h2>📎 Contato e Contribuição</h2>
 
 <p>
-  Contribuições são bem-vindas! Sinta-se à vontade para enviar issues ou pull requests.
+  Sinta-se à vontade para abrir <strong>issues</strong>, sugerir melhorias ou contribuir com código! Esta plataforma está em constante evolução para oferecer uma experiência de aprendizado cada vez mais divertida e eficaz. 🎓✨
 </p>
 
 <p align="center">
-  <img src="https://img.icons8.com/color/96/github.png" width="40"> <br>
-  <a href="https://github.com/seu-usuario/playlerning">github.com/seu-usuario/playlerning</a>
+  <img src="https://img.icons8.com/clouds/100/github.png" width="40"/> <br>
+  <strong>Feito com ❤️ por uma mente apaixonada por ensino e tecnologia.</strong>
 </p>
