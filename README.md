@@ -107,3 +107,11 @@
   <br>
   <strong>Feito com ❤️ por uma mente apaixonada por tecnologia.</strong>
 </p>
+
+## 📜 Licença
+
+Este projeto está licenciado sob a **Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)**.
+
+Você pode **usar, modificar e compartilhar livremente**, desde que **cite o autor original** e **não utilize para fins comerciais**.
+
+🔗 [Leia mais sobre a licença](https://creativecommons.org/licenses/by-nc/4.0/)
